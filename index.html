@@ -4,386 +4,781 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Terrace Bar - Dining Under the Stars</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600;700&amp;family=Newsreader:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+<title>Terrace Bar</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Theme Config -->
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#D0BB95", "background-light": "#f7f7f6", "background-dark": "#1d1a15", "surface-dark": "#1a2c22"}, fontFamily: {display: "Newsreader", body: ["Noto Sans", "sans-serif"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
-<style>html{scroll-behavior:smooth} nav:not(:first-of-type){display:none!important} footer:not(:last-of-type){display:none!important}</style>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e66b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "surface-dark": "#1a2c24",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(17, 33, 23, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-shadow:hover {
+            box-shadow: 0 0 20px rgba(25, 230, 107, 0.4);
+        }
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+    /* Hover polish */
+    a, button { transition: color .2s ease, background-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+    /* Reduce trailing whitespace */
+    footer { margin-bottom: 0; }
+    </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-[#111714] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-[#112117]">
-<div class="relative flex min-h-screen w-full flex-col group/design-root">
-<!-- Sticky Navigation Bar -->
-<nav class="sticky top-0 z-50 w-full border-b border-[#29382f]/50 bg-background-dark/80 backdrop-blur-md transition-all duration-300">
-<div class="layout-container flex justify-center w-full">
-<div class="px-4 md:px-10 py-3 flex items-center justify-between w-full max-w-[1280px]">
-<!-- Logo -->
-<div class="flex items-center gap-3 text-white hover:opacity-90 transition-opacity cursor-pointer">
-<div class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary">
-<span class="material-symbols-outlined filled">deck</span>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<!-- Navigation -->
+<div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+<nav id="siteNav" class="glass-panel w-full max-w-[960px] rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300">
+<div class="flex items-center gap-3 text-white">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-background-dark">
+<span class="material-symbols-outlined text-xl font-bold">local_bar</span>
 </div>
-<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Terrace Bar</h2>
+<h2 class="text-white text-lg font-bold tracking-tight hidden sm:block">Terrace Bar</h2>
 </div>
-<!-- Desktop Links -->
-<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
-<div class="flex items-center gap-8">
-<a class="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#menu">Menu</a>
-<a class="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#about">About</a>
-<a class="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#gallery">Gallery</a>
-<a class="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#contact">Contact</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#home">Home</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#menu">Menu</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#about">About</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#contact">Find Us</a>
 </div>
-<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#112117] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#2dc96b] transition-colors shadow-[0_0_15px_rgba(54,226,123,0.3)]">
-<span class="truncate">Book Now</span>
+<div class="flex items-center gap-4">
+<button id="reserveBtn" class="neon-shadow flex items-center justify-center rounded-full bg-primary px-5 py-2 text-background-dark text-sm font-bold transition-all hover:scale-105 active:scale-95">
+<span class="truncate">Reserve a Table</span>
 </button>
-</div>
-<!-- Mobile Menu Icon -->
-<div class="md:hidden text-white">
-<span class="material-symbols-outlined cursor-pointer">menu</span>
-</div>
-</div>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-white hover:text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </div>
 </nav>
-<div class="layout-container flex h-full grow flex-col items-center">
+</div>
 <!-- Hero Section -->
-<div class="w-full max-w-[1280px] p-4 md:px-10 md:py-8">
-<div class="flex min-h-[560px] md:min-h-[640px] flex-col gap-8 rounded-xl md:rounded-3xl items-center justify-center p-6 md:p-12 relative overflow-hidden group">
+<a id="home"></a>
+<header id="hero" class="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden">
 <!-- Background Image with Overlay -->
-<div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" data-alt="Rooftop terrace dining area at sunset with warm string lights" style='background-image: linear-gradient(to bottom, rgba(17, 33, 23, 0.3) 0%, rgba(17, 33, 23, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFJDla4iFWYrvFZD0b3ZTO6inoOoBvsUhvDzOsKV7LVxOLQlYNyAszErVt9V_IKauQd9OekcjARcnzrQ6cYe9Flt8MrsbJeqfJrBhc32d12m2M1yTnyX2XxF4U6TXYNSug_v_qiTrhKRnPvJviMLzn1QUG55ZRx_57BDzOpyu2CRcTVQsODxNisrPRSvlFt60uE6Yvb4h3fpbFDJIsviW98cLLCDVVxlIA06I5bN-xBQrbDy3sNbxiDiWqYthSJgrEs8-WUf2iZO4");'>
+<div class="absolute inset-0 z-0 h-full w-full">
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background-dark z-10"></div>
+<img alt="Nightlife terrace bar with ambient lighting and cocktails" class="h-full w-full object-cover opacity-90" data-alt="Nightlife terrace bar with ambient lighting and cocktails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBilo8On7eB3KfE7Fd4i6t17yRo1_AYvipSOf8Gb1awD3mRRAjl4shEEzxrJnaZyqEL07-4ZGrW45y1hGxzhNyf8fB5V_h0OoM5qWjCfwrXXeEPMKmb3vdvxZh6KQQc6odAXA33lq4lliAq7ngyQPhkFcp2JQyURTv7sUNhS1pVDUcmD2uqBfGr8GLAzAo-Utp7e3W1Li3yR3SwXmUzlLhhpQLvcvTf3rQW7TQUlWGzn9qAojvlts7XK91oGVlFQm3SZkvTITBOUk"/>
 </div>
-<div class="relative flex flex-col gap-6 text-center max-w-3xl z-10 mt-10 md:mt-0">
-<h1 class="text-white text-5xl md:text-7xl font-black leading-[1.1] tracking-[-0.033em] drop-shadow-lg">
-                            Dining Under <br/><span class="text-primary">The Stars</span>
+<!-- Hero Content -->
+<div class="layout-container relative z-20 flex h-full w-full flex-col px-4 md:px-10 lg:px-40 py-20">
+<div class="flex flex-1 flex-col justify-end max-w-[960px] mx-auto w-full pb-16 md:pb-32">
+<!-- Badge -->
+<div class="mb-6 w-fit">
+<div class="glass-panel flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-white uppercase tracking-wider">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            Open Now until 2 AM
+                        </div>
+</div>
+<!-- Heading -->
+<h1 class="text-white text-5xl md:text-7xl font-black leading-[1.1] tracking-tight mb-6 max-w-3xl drop-shadow-2xl">
+                        Dining Under <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary/80">The Stars</span>
 </h1>
-<h2 class="text-white/90 text-lg md:text-xl font-normal leading-relaxed max-w-xl mx-auto drop-shadow-md">
-                            Experience the perfect blend of nature, flavor, and elegance. Where every meal comes with a view.
-                        </h2>
-<div class="flex flex-wrap gap-4 justify-center mt-4">
-<button class="flex items-center justify-center rounded-full h-12 px-8 bg-primary text-[#112117] text-base font-bold transition-all hover:scale-105 hover:bg-white hover:text-primary">
-<span>View Menu</span>
-</button>
-<button class="flex items-center justify-center rounded-full h-12 px-8 bg-[#112117]/60 backdrop-blur-sm border border-white/20 text-white text-base font-bold transition-all hover:bg-white hover:text-[#112117]">
-<span>Reserve a Table</span>
-</button>
+<!-- Subheading -->
+<p class="text-gray-200 text-lg md:text-xl font-normal leading-relaxed max-w-xl mb-10 opacity-90">
+                        Experience the city's best open-air cocktails and cuisine. Elevate your evening in an atmosphere of intimate luxury.
+                    </p>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap gap-4">
+<button id="reserveHeroBtn" class="neon-shadow flex h-14 min-w-[160px] items-center justify-center rounded-full bg-primary px-8 text-background-dark text-base font-bold tracking-wide transition-all hover:scale-105 active:scale-95">
+                            Reserve a Table
+                        </button>
+<a href="#menu" class="flex h-14 min-w-[160px] items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 text-white text-base font-bold tracking-wide backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40 active:scale-95">
+                            View Menu
+                        </a>
+</div>
+<!-- Trust Indicators -->
+<div class="mt-12 flex items-center gap-6">
+<div class="flex -space-x-3">
+<img alt="User 1" class="h-10 w-10 rounded-full border-2 border-background-dark object-cover" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaUVbR1imyjinqBEZPJeCPgIQFViBUeU8FwyOjkleeWSPmg98B4IbJLVd0RF4DkugHd0-Pswr9E7iIQZbUD8mzaIvFASEGL0rBeXmb8bveYq9QpHgB3YzzW9HdOVwDsIxJI0J4iBLQhiYWPK5AmH6Qc2WAhOZc0DKiFY8voN61bxW6VTIojvL2-_XjIFvsJCHZH8Pys3ENICi_LMeNVfFHi6X5Z5d-wnlOkRTHL-oznklVxlbCprL9FwbymKgG_ftTyq_LMNb1zog"/>
+<img alt="User 2" class="h-10 w-10 rounded-full border-2 border-background-dark object-cover" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiZRfXsJT0hROwIeKan53zhv3gMx0N34f8EYdlKe7TFTlwRIS36gWYWxZotggSSjb4mMIGlJExXNrM8KZk7vvDCCrE2ksrvEGr7CNuuLATqPEBzXHJaAVPj80YRNy3Rt1qKU9q-QyYff2kHdeOcHSuEAokNSs9T9nFGGYzoUTGX_eP3Tp3ztV8QYFXL_swUlBlrc7Q5Kzm7iIJi3QWvKHgxGgtEBjWALTOQwF7zFd-spufUr7pQNm-WqHmG3jRikg_zOe5jQkv4a0"/>
+<img alt="User 3" class="h-10 w-10 rounded-full border-2 border-background-dark object-cover" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCLiBn6J_iXZFQd4AkO_K9lNfowTu0Qbjst_n0G_v6QzY1aCg8X7gUJE4ja1OEaM_I4nRUErpNHxnVu2mRwi-vuUrlQT9aaYIs_l61FCF7ZIQyZmPyTv6-WOlRN9PRfljvRBE27XOzsxuZk6xrTIr40bllL-zouv46mwM3LzweDEGIPAi-uu8HOyJUBj1SX7JT7slDdZ6dWsnWRrLUofWSNaYIZaKm1l6u9acWkfLpQBMWQjqCOj5J_ggreK1BgNDavpu69rowkpw"/>
+<div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-background-dark bg-surface-dark text-xs font-bold text-white">
+                                +2k
+                            </div>
 </div>
-</div>
-</div>
-</div>
-<a id="about"></a>
-<!-- Features / About Section -->
-<div class="w-full max-w-[1280px] px-4 md:px-10 py-16">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-<!-- Text Content -->
-<div class="flex flex-col gap-8 order-2 lg:order-1">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-sm">
-<span class="material-symbols-outlined text-[20px]">spa</span>
-<span>The Experience</span>
-</div>
-<h2 class="text-white text-4xl md:text-5xl font-bold leading-tight tracking-tight">
-                                Where Nature <br/>Meets Flavor
-                            </h2>
-<p class="text-[#9eb7a8] text-lg leading-relaxed">
-                                Welcome to Terrace Bar. We've curated a sanctuary above the city where fine wines meet gourmet dishes. Our space is designed to help you disconnect from the noise and reconnect with good company in a cozy, sophisticated atmosphere.
-                            </p>
-</div>
-<div class="flex flex-col gap-4">
-<div class="flex items-start gap-4">
-<div class="bg-surface-dark p-3 rounded-full text-primary shrink-0">
-<span class="material-symbols-outlined">yard</span>
-</div>
-<div>
-<h4 class="text-white font-bold text-lg">Open-Air Terrace</h4>
-<p class="text-[#9eb7a8]">Breathtaking views of the skyline in a lush garden setting.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="bg-surface-dark p-3 rounded-full text-primary shrink-0">
-<span class="material-symbols-outlined">restaurant_menu</span>
-</div>
-<div>
-<h4 class="text-white font-bold text-lg">Seasonal Cuisine</h4>
-<p class="text-[#9eb7a8]">Dishes crafted from locally sourced, organic ingredients.</p>
-</div>
-</div>
-</div>
-<button class="flex w-fit items-center gap-2 text-primary font-bold hover:text-white transition-colors group">
-<span>Read Our Story</span>
-<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
-</button>
-</div>
-<!-- Image Grid -->
-<div class="grid grid-cols-2 gap-4 order-1 lg:order-2 h-full">
-<div class="flex flex-col gap-4 mt-8">
-<div class="w-full h-48 md:h-64 bg-center bg-cover rounded-2xl" data-alt="Close up of a gourmet salad dish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCh3qZ1NLRS1JljQzNBxoLa7zyLAYuEVIuMNiXmY6JY5P9TkdTDaPy7rOZJEluert_k9dY9jRVQynYFWaJG5QIiCjxnkVIgK0Did0cOeqMgwzsVTcaYJTEsvjGbCQFmOo-L-toylWI0TeiQxTO2NXldXroIAkC9BHPdJfmrLUiHumLCaoe_LOzUEmaqbFaswq_iT7aQAqcz42OwyEnwLBi66ooojGuLMKpzzxiXZr4dX_ZYnAurhtHXrZqLHiyu3TYM6V4tBZVMpaE");'></div>
-<div class="w-full h-32 md:h-40 bg-center bg-cover rounded-2xl opacity-80" data-alt="Abstract view of wine glasses on a table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMN_KFIO4bBVS9qCIqZSxsf5DV4V-nY_kCWJLfZMTYV0TeOXvuOq-OJtRuYLxobnL9gb_CQEbXnxaSaA6duM08aqJ5KgJe_psX9f3HN3Vsqhew-LlKbyYUymn-sV9C3hDyMvpp49_iYfoszadQ_sojy3CLuz68uU0Wjdf8hMXaJpHRzFzq1AAkIJ2YD4siOBmnxK_3sDtUbAkc4sa09-s26iVO3aFJb9vUuhZFq631aivD5LjVX5D3MGtH-YjkcPVOw-cLURPb7bs");'></div>
-</div>
-<div class="flex flex-col gap-4">
-<div class="w-full h-32 md:h-40 bg-center bg-cover rounded-2xl opacity-80" data-alt="Chef plating a dish in the kitchen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABYmgQI7nFZELbDMchCT0ZGfJh_oKhFs2wxcvl238S2pBKyL8LJb546cdpgoZNHW3fAziGZieQVZEB2iZHpUGeJ6uJWBoLF8y-y_GIRZeql7Yf1Eqe6bB2aR2H_qpZcp_v14zFEx1Em9TTRGPOD7F2HLV6WJ57e_NnffjhFDqlIc69KNHlfNUKch4NU6KN3Qw56DYumQqcjckrvworMJ653ZRO-LCzJpzQqhuzFsUyXrLVSGj35oOwR0YUauWdUqg4UEfyH0zRIHs");'></div>
-<div class="w-full h-48 md:h-64 bg-center bg-cover rounded-2xl" data-alt="Elegant interior seating of the restaurant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5z1mTMkdAh9qw2A_3VSum-P3dtRlm5X8Te7SS3PjB80IhPE24ayowN1jwogEiEKXVwJdz--eyvKgrEzEcZWDq9PolsWpjyxIAW-hg5diq9Of5KLX0jlWj7t-QPxvYABiRWIe6URbhELPIaIwhFQpZCtaooI86YUh0TipF2d4kO3n4K2WXs5_9UMISnht-8xBMDC3EjuECLCFhaZIxUs7zywpi9Igsg69ustuW9siA5xFJQS7K2oEfqemm-F5QMOGhLUdDNWpqQhM");'></div>
-</div>
-</div>
-</div>
-</div>
-<a id="gallery"></a>
-<a id="menu"></a>
-<!-- Menu / Chef's Specials -->
-<div class="w-full bg-surface-dark py-16">
-<div class="w-full max-w-[1280px] px-4 md:px-10 mx-auto flex flex-col gap-8">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-<div>
-<span class="text-primary font-bold uppercase tracking-wider text-sm mb-2 block">Taste the Passion</span>
-<h2 class="text-white text-3xl md:text-4xl font-bold leading-tight">Chef's Specials</h2>
-</div>
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium flex items-center gap-1" href="#">
-                            View Full Menu <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
-</a>
-</div>
-<!-- Horizontal Scroll Container -->
-<div class="flex overflow-x-auto pb-8 pt-2 gap-6 snap-x snap-mandatory scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none]">
-<!-- Card 1 -->
-<div class="flex-none w-[280px] md:w-[320px] snap-center group cursor-pointer">
-<div class="flex flex-col gap-4 rounded-3xl bg-background-dark p-4 border border-white/5 hover:border-primary/30 transition-all duration-300 h-full">
-<div class="w-full aspect-[4/3] bg-center bg-cover rounded-2xl overflow-hidden relative" data-alt="Grilled salmon fillet with asparagus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxx9T6QRg-1JWGZymqoEFAzV6pgMYxYUCuxPVqYSSN9rEuxrATf6cKgivB0NlIHCPrHjyiGgidpkwFIR3_uxRMCZGGeXZrqqhfrxrMeZ4kCKHH7yCksOjOk12zaz4iVR5G5-dLEc-PZ4pr_ID40uLhhzsVLxrskS4qHr4jR0JM8fOaVYEopcnBu8uckn1HGBwinM4PwNB0Kqz9LteRAr608p5Psr9-8uMfe3FH5zXYxX4NdDm0dOd4AJh2oxqLtBPqhIyX-H_lm_U");'>
-<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-<button class="absolute bottom-3 right-3 size-10 bg-white text-background-dark rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-white text-lg font-bold">Grilled Atlantic Salmon</h3>
-<p class="text-primary font-bold">$28</p>
-</div>
-<p class="text-[#9eb7a8] text-sm leading-normal line-clamp-2">Served with roasted asparagus, lemon butter sauce, and wild rice.</p>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="flex-none w-[280px] md:w-[320px] snap-center group cursor-pointer">
-<div class="flex flex-col gap-4 rounded-3xl bg-background-dark p-4 border border-white/5 hover:border-primary/30 transition-all duration-300 h-full">
-<div class="w-full aspect-[4/3] bg-center bg-cover rounded-2xl overflow-hidden relative" data-alt="Plate of creamy truffle pasta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVYF1mEK0INXHZuurJZXGcOV5asMDM54xlbQNL9PKk3XCRhSxk2aQouNnCq4FX3w3rWZrR37laCZlekCkK61MiT5rgzGoOGPNwQoLY7UM8nz3wAFnidZenR8RCyFqE-7my0CUN3kN_0pxLYTLcPfJCCfaPHGtsZc0dBI-Hj7LG6dE3pg7DHUcjEBhSr7KtKrNNj6rr-oS3WKUtJubig94phZhgGjz6yOre5wVyFRkisnXU0Pw7FaUiQgI75c3Hk23Bln6F7EmMVnU");'>
-<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-<button class="absolute bottom-3 right-3 size-10 bg-white text-background-dark rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-white text-lg font-bold">Black Truffle Pasta</h3>
-<p class="text-primary font-bold">$24</p>
-</div>
-<p class="text-[#9eb7a8] text-sm leading-normal line-clamp-2">Handmade tagliatelle, shaved black truffle, parmesan cream.</p>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="flex-none w-[280px] md:w-[320px] snap-center group cursor-pointer">
-<div class="flex flex-col gap-4 rounded-3xl bg-background-dark p-4 border border-white/5 hover:border-primary/30 transition-all duration-300 h-full">
-<div class="w-full aspect-[4/3] bg-center bg-cover rounded-2xl overflow-hidden relative" data-alt="Juicy beef steak with herbs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABmysWxomCSumS9M9N-MdQUunjiBfydKoD4VjqA_G3aabM96Kmmpzhda25JKq3PAqyquF8n4075EgIaNss178H32dFYoBV5V5v0Yj87LGBNBZ89k2w3CUVsw4nV85PVQU66xaqjJ9xwcaB3AHGMbIepOzShdy_y4rvJlf4h8VFjvtELn7M5QOL4ORec1TUGXcY9NlXEBbH__jfiK92N6cM0DjKtQunHKitF2Y_9rEDmvXV6Za6ixsU8jwJUbjRQ-OvhVGVlm6YVRU");'>
-<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-<button class="absolute bottom-3 right-3 size-10 bg-white text-background-dark rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-white text-lg font-bold">Ribeye Steak</h3>
-<p class="text-primary font-bold">$34</p>
-</div>
-<p class="text-[#9eb7a8] text-sm leading-normal line-clamp-2">30-day dry aged beef, garlic butter, rosemary potatoes.</p>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="flex-none w-[280px] md:w-[320px] snap-center group cursor-pointer">
-<div class="flex flex-col gap-4 rounded-3xl bg-background-dark p-4 border border-white/5 hover:border-primary/30 transition-all duration-300 h-full">
-<div class="w-full aspect-[4/3] bg-center bg-cover rounded-2xl overflow-hidden relative" data-alt="Colorful signature cocktail drink" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYoQbZLM7buwihqvNgwdzf_t7RyfKSzolycUlFhnlaA7GGfNYSmEwB9xRuJMs_5NQtITpZX21Zy8Kn03yfLJyitGT7tfxmVQDAMQZ5h2OSlVD6lzc1MNs2DmYuJKNJI6AfF8E7GaB4u68yixo8-Xmje1QT5tpDMREL4Vojy-snph9hIJ2S1f2cDxvnQdavzxyHPiwiek6CZRK86PxI3ZfAnfR8flGfmPXP46Qns2wYSS87O-YpFFZnqTN1yojBuPYwWqxY3InFHts");'>
-<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-<button class="absolute bottom-3 right-3 size-10 bg-white text-background-dark rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-white text-lg font-bold">Terrace Sunset</h3>
-<p class="text-primary font-bold">$14</p>
-</div>
-<p class="text-[#9eb7a8] text-sm leading-normal line-clamp-2">Gin, elderflower liqueur, fresh lime juice, cucumber.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Testimonials -->
-<div class="w-full max-w-[1280px] px-4 md:px-10 py-16">
-<div class="text-center mb-12">
-<span class="text-primary font-bold uppercase tracking-wider text-sm mb-2 block">Guest Love</span>
-<h2 class="text-white text-3xl md:text-4xl font-bold">What People Are Saying</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Review 1 -->
-<div class="bg-surface-dark p-8 rounded-2xl flex flex-col gap-6 relative">
-<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-4">format_quote</span>
-<div class="flex gap-1 text-primary text-sm">
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-</div>
-<p class="text-white/80 italic z-10">"The ambiance is unmatched. We sat on the terrace at sunset and it was magical. The truffle pasta is a must-try!"</p>
-<div class="flex items-center gap-3 mt-auto pt-4 border-t border-white/10">
-<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD53u7o7KSGD1P0k8IWDOZWoki2LFZoOkjH-EvnVsv-7fXohce6g_0tfK6YoYeuCiuS-gI9HZR9-_Vyw9u-XB1mxZIBNqe4vDTYgD5uQcHnBk-mP3rFhFi9XgCkJPEe9tyoQzgoRF-2jcA_V1-0CO1SEdzuyDru_BRCOEeLrUJqh9OXcNC-5ULbnN-p1qGbuzW7XLbq6GcS05zcoU2neOA2on4gYrbWpuvJOYtElZUfHem-DbiC4rAnZrvkIpZmn-RA3t2Ff8gSA-Q");'></div>
-<div>
-<p class="text-white font-bold text-sm">Sarah Jenkins</p>
-<p class="text-white/40 text-xs">Local Guide</p>
-</div>
-</div>
-</div>
-<!-- Review 2 -->
-<div class="bg-surface-dark p-8 rounded-2xl flex flex-col gap-6 relative">
-<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-4">format_quote</span>
-<div class="flex gap-1 text-primary text-sm">
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-</div>
-<p class="text-white/80 italic z-10">"Incredible service and even better food. The staff made our anniversary dinner very special. Highly recommended."</p>
-<div class="flex items-center gap-3 mt-auto pt-4 border-t border-white/10">
-<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of Michael Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvjaKTgJR1lPEDexC9pokQimw-2h4pV2AgLKUQcEWTGOMp98QrhpHbEQjH09qQjLfr4eoc0mModwGkE2eZqb5h1tlOWd0TcqO7Bcc7J2aqQ8RWEeUTyMlT57SL10LBpp4XtKc96Hgz2vpKWl9i0SFleSwWggBu9EbI9JaLHifUTqWh63cN689-TD99ab5_KalrS-6-a9nWNPq5C93GH1W0_aX8WbJmdF1sxW3YYjgeKVeyRjrvrUneFao9o6aeI0An1-0Zk456F0E");'></div>
-<div>
-<p class="text-white font-bold text-sm">Michael Chen</p>
-<p class="text-white/40 text-xs">Food Critic</p>
-</div>
-</div>
-</div>
-<!-- Review 3 -->
-<div class="bg-surface-dark p-8 rounded-2xl flex flex-col gap-6 relative">
-<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-4">format_quote</span>
-<div class="flex gap-1 text-primary text-sm">
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star</span>
-<span class="material-symbols-outlined filled">star_half</span>
-</div>
-<p class="text-white/80 italic z-10">"A hidden gem in the city. The cocktails are inventive and the interior design is simply stunning. Perfect date spot."</p>
-<div class="flex items-center gap-3 mt-auto pt-4 border-t border-white/10">
-<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of Elena Rodriguez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8-u4uZaf14Fhp6ywQEzvX7GO9ahjZDa0u3H3BAhF8ZszVmPNqmFN3c6QSMoMmM4SAwwSSFQxja1MRqcY-nodD94SG9Zc7JQMrDNNWG7uf8vVi2tqbjVOHjfpLdX2nX_JPpW6_-ydHgkwE6-KZ-IXLCcHzK5sPUZVQOUgFeO8BIaNst6HDbP8GCza_tXGAOuOlZ2vJ0p4XBfeWHtubzKD3ezwfOwy61cKlc2mw5qrh25zjtc6SNLZnjyFkRR16b-slFBvPDmoKhAw");'></div>
-<div>
-<p class="text-white font-bold text-sm">Elena Rodriguez</p>
-<p class="text-white/40 text-xs">Verified Diner</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer -->
-<footer class="w-full bg-[#0d120f] border-t border-white/5 pt-16 pb-8 mt-12">
-<div class="w-full max-w-[1280px] px-4 md:px-10 mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-<!-- Brand -->
-<div class="flex flex-col gap-6">
-<div class="flex items-center gap-3 text-white">
-<div class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary">
-<span class="material-symbols-outlined filled">deck</span>
-</div>
-<h2 class="text-xl font-bold tracking-tight">Terrace Bar</h2>
-</div>
-<p class="text-[#9eb7a8] text-sm leading-relaxed">
-                                An urban oasis serving seasonal flavors and signature cocktails. Experience dining elevated.
-                            </p>
-<div class="flex gap-4">
-<a class="size-10 rounded-full bg-surface-dark flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors" href="#">
-<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
-</a>
-<a class="size-10 rounded-full bg-surface-dark flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors" href="#">
-<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
-</a>
-</div>
-</div>
-<!-- Quick Links -->
-<div class="flex flex-col gap-6">
-<h3 class="text-white font-bold text-lg">Quick Links</h3>
-<ul class="flex flex-col gap-3">
-<li><a class="text-[#9eb7a8] hover:text-primary transition-colors text-sm" href="#">Our Story</a></li>
-<li><a class="text-[#9eb7a8] hover:text-primary transition-colors text-sm" href="#">Full Menu</a></li>
-<li><a class="text-[#9eb7a8] hover:text-primary transition-colors text-sm" href="#">Private Events</a></li>
-<li><a class="text-[#9eb7a8] hover:text-primary transition-colors text-sm" href="#">Reservations</a></li>
-</ul>
-</div>
-<!-- Contact -->
-<div class="flex flex-col gap-6">
-<h3 class="text-white font-bold text-lg">Visit Us</h3>
-<div class="flex flex-col gap-4">
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-xl">location_on</span>
 <div class="flex flex-col">
-<p class="text-[#9eb7a8] text-sm">123 Skyline Ave, Suite 400</p>
-<p class="text-[#9eb7a8] text-sm">New York, NY 10001</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-lg fill-current">star</span>
+<span class="material-symbols-outlined text-lg fill-current">star</span>
+<span class="material-symbols-outlined text-lg fill-current">star</span>
+<span class="material-symbols-outlined text-lg fill-current">star</span>
+<span class="material-symbols-outlined text-lg fill-current">star_half</span>
 </div>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-xl">schedule</span>
-<div class="flex flex-col">
-<p class="text-[#9eb7a8] text-sm"><span class="text-white font-medium">Mon-Thu:</span> 5pm - 11pm</p>
-<p class="text-[#9eb7a8] text-sm"><span class="text-white font-medium">Fri-Sat:</span> 5pm - 1am</p>
-<p class="text-[#9eb7a8] text-sm"><span class="text-white font-medium">Sun:</span> 4pm - 10pm</p>
+<span class="text-sm text-gray-400">Trusted by 2,000+ guests</span>
 </div>
 </div>
 </div>
 </div>
-<!-- Newsletter -->
-<div class="flex flex-col gap-6">
-<h3 class="text-white font-bold text-lg">Stay Updated</h3>
-<p class="text-[#9eb7a8] text-sm">Join our newsletter for exclusive offers and event updates.</p>
-<div class="flex flex-col gap-3">
-<input class="w-full h-10 px-4 rounded-lg bg-surface-dark border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm" placeholder="Email address" type="email"/>
-<button class="w-full h-10 rounded-lg bg-primary text-[#112117] font-bold text-sm hover:bg-white transition-colors">Subscribe</button>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/50">
+<span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
+</div>
+</header>
+<!-- Rating Summary Section -->
+<section class="w-full bg-background-dark py-16 px-4 md:px-40 flex justify-center border-t border-white/5">
+<div class="max-w-[960px] w-full flex flex-col md:flex-row gap-12 items-center justify-between">
+<!-- Left Side: Text content -->
+<div class="flex flex-col gap-4 max-w-md">
+<h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Loved by locals &amp; travelers alike</h2>
+<p class="text-gray-400">Our guests love the atmosphere, the expertly crafted cocktails, and the stunning views of the city skyline.</p>
+</div>
+<!-- Right Side: Rating Component -->
+<div class="flex flex-wrap gap-x-8 gap-y-6 p-6 rounded-2xl bg-surface-dark/50 border border-white/5 w-full md:w-auto">
+<div class="flex flex-col gap-2 min-w-[120px]">
+<p class="text-white text-5xl font-black leading-tight tracking-[-0.033em]">4.8</p>
+<div class="flex gap-0.5 text-primary">
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;">star</span>
+<span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">star</span>
+</div>
+<p class="text-gray-400 text-sm font-normal leading-normal">120 reviews</p>
+</div>
+<div class="grid min-w-[240px] flex-1 grid-cols-[20px_1fr_40px] items-center gap-y-2">
+<!-- 5 Star -->
+<p class="text-white text-xs font-medium">5</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+<div class="rounded-full bg-primary" style="width: 80%;"></div>
+</div>
+<p class="text-gray-400 text-xs font-medium text-right">80%</p>
+<!-- 4 Star -->
+<p class="text-white text-xs font-medium">4</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+<div class="rounded-full bg-primary" style="width: 12%;"></div>
+</div>
+<p class="text-gray-400 text-xs font-medium text-right">12%</p>
+<!-- 3 Star -->
+<p class="text-white text-xs font-medium">3</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+<div class="rounded-full bg-primary" style="width: 5%;"></div>
+</div>
+<p class="text-gray-400 text-xs font-medium text-right">5%</p>
+<!-- 2 Star -->
+<p class="text-white text-xs font-medium">2</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+<div class="rounded-full bg-primary" style="width: 2%;"></div>
+</div>
+<p class="text-gray-400 text-xs font-medium text-right">2%</p>
+<!-- 1 Star -->
+<p class="text-white text-xs font-medium">1</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+<div class="rounded-full bg-primary" style="width: 1%;"></div>
+</div>
+<p class="text-gray-400 text-xs font-medium text-right">1%</p>
 </div>
 </div>
 </div>
-<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-[#9eb7a8] text-xs">© 2024 Terrace Bar. All rights reserved.</p>
-<div class="flex gap-6">
-<a class="text-[#9eb7a8] text-xs hover:text-white" href="#">Privacy Policy</a>
-<a class="text-[#9eb7a8] text-xs hover:text-white" href="#">Terms of Service</a>
+</section>
+<!-- Highlight Grid -->
+<section class="w-full bg-background-dark py-12 px-4 md:px-40 flex justify-center pb-24">
+<div class="max-w-[960px] w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="group relative overflow-hidden rounded-3xl h-[400px] cursor-pointer">
+<img alt="Gourmet cocktail with garnish on a dark table" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Gourmet cocktail with garnish on a dark table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kOmatHJqSkU-X8ldKI_LZZRpMz6P8qveWEVpCXewhuVElaF5oLcxXCqnelOnFJvZ3WrwLTcS7MLjm69NVOIdYiuOEp9_8v0jeBVPircpqLpV7DPJhMmKSSZP-8dBwcHTmJSV_l3AU0nUa5DL_1W4pzxrEHlmVYqUypNjYNOCn6-szdqP-FegAP5XV9ST7hXzbhcPEdZf93tptR1mZEQ2bpdsHB0sE8a_6gBmwRx9gnNSPhjoPn6I-8UO_i1zzEgOEYF8XUeDKv0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-2xl font-bold text-white mb-2">Signature Cocktails</h3>
+<p class="text-gray-300 text-sm mb-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Hand-crafted mixes using premium spirits and fresh botanicals.</p>
+<span class="flex items-center gap-2 text-primary font-bold text-sm">
+                            View Drinks Menu <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-3xl h-[400px] cursor-pointer">
+<img alt="Outdoor lounge seating area at dusk" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Outdoor lounge seating area at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBgzZiZcOEa0qAJYbEXKy42kxWE21ymr3ju2_Wiv81Hgsw2KbE9XAxbgQjUkrtJIB8wdsfal45Q5baGs6u5ua64gQek-aVa05iEVXZoDQb9eKCGN95sqKV2UjAW8uJb9vtkrxY5MwsS1R7LJRWm_xJnOBPPJbOxRdBMpKhY6dPahFTOn-W6IiUGVCiU73j1_Dv-YLQXkm_xEyo_8dwUv7oW4c-jCGebu1EK7dEOAqLZJxQZngiw8d7UTb6Ky28gaoWryl4TxtEUDI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-2xl font-bold text-white mb-2">Private Events</h3>
+<p class="text-gray-300 text-sm mb-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Host your unforgettable evening under the stars with our dedicated service.</p>
+<span class="flex items-center gap-2 text-primary font-bold text-sm">
+                            Book a Space <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
 </div>
 </div>
 </div>
-</footer>
-</div>
+</section>
 </div>
 </body></html>
 
-<!-- Terrace Bar Menu Page -->
+<!-- Terrace Bar Menu -->
 <!DOCTYPE html>
 
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Terrace Bar - Menu</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<title>Terrace Bar Menu</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Theme Configuration -->
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#D0BB95", "background-light": "#f7f7f6", "background-dark": "#1d1a15", "surface-dark": "#1a2c22"}, fontFamily: {display: "Newsreader"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e66b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "surface-dark": "#1a2c22",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white selection:bg-primary selection:text-black min-h-screen flex flex-col">
+<!-- Hero Section -->
+<header class="relative w-full h-[40vh] min-h-[300px] flex items-end pb-12 overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Dark moody bar atmosphere with blurred lights" class="w-full h-full object-cover opacity-60" data-alt="Dark moody bar atmosphere with blurred lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1T0SUgUVMA5nqCYUeftMnz8v93dmEW0et14ZhvbJ-QXYH3QLIHTYvGQJrmeISnnHPxawpPK4gowMApxbaXNVGE__0NGa97QxGjw5W2ZVnDtmaYNy9xC9fRz8v2hgJ2pq0sDRPtraIH6bPLoEfTI7JtSESZauzjsmyZFBd3IXdHRJF2pMvte7y5CD-5xsuL03CtYyFncgLQNr7jTzzID2ooQYJR46ANsjDhRyq_8CZAy2UG8w9gdJJQ4KKGigi2MORsQq5erEW-oQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full px-6 md:px-12 flex justify-center">
+<div class="w-full max-w-[960px] flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 mb-2">
+<span class="h-px w-8 bg-primary"></span>
+<span class="text-primary text-sm font-bold uppercase tracking-widest">Est. 2024</span>
+</div>
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tighter">
+                    Terrace Bar
+                </h1>
+<p class="text-gray-300 text-lg md:text-xl font-normal max-w-lg">
+                    Welcome to our digital menu experience. Discover flavors crafted for the night.
+                </p>
+</div>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="flex-grow w-full px-6 md:px-12 pb-24 flex justify-center">
+<div class="w-full max-w-[960px] flex flex-col gap-12">
+<a id="menu"></a>
+<!-- Section: Snacks -->
+<section>
+<div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+<h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">tapas</span>
+                        Snacks
+                    </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Garlic Bread</span>
+<span class="text-gray-400 text-sm font-normal">Toasted baguette with herb butter</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">8 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Cheese Plate</span>
+<span class="text-gray-400 text-sm font-normal">Assorted local &amp; european cheeses</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">25 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Bruschetta</span>
+<span class="text-gray-400 text-sm font-normal">Tomato, basil, and balsamic glaze</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">12 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Olives Mix</span>
+<span class="text-gray-400 text-sm font-normal">Marinated kalamata and green olives</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">10 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Chicken Wings</span>
+<span class="text-gray-400 text-sm font-normal">Spicy buffalo or BBQ sauce</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">18 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Nachos Supreme</span>
+<span class="text-gray-400 text-sm font-normal">Cheese, jalapeños, salsa, sour cream</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">22 GEL</span>
+</div>
+</div>
+</section>
+<!-- Section: Pizza & Khachapuri -->
+<section>
+<div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+<h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">local_pizza</span>
+                        Pizza &amp; Khachapuri
+                    </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Pepperoni Pizza</span>
+<span class="text-gray-400 text-sm font-normal">Mozzarella, spicy salami, tomato sauce</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">22 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Margarita Pizza</span>
+<span class="text-gray-400 text-sm font-normal">Fresh basil, mozzarella, tomato</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">18 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Imeretian Khachapuri</span>
+<span class="text-gray-400 text-sm font-normal">Traditional cheese filled bread</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">15 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Megrelian Khachapuri</span>
+<span class="text-gray-400 text-sm font-normal">Double cheese topping</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">19 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Four Cheese Pizza</span>
+<span class="text-gray-400 text-sm font-normal">Mozzarella, gorgonzola, parmesan, cheddar</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">24 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Prosciutto Funghi</span>
+<span class="text-gray-400 text-sm font-normal">Ham, mushrooms, olives</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">26 GEL</span>
+</div>
+</div>
+</section>
+<!-- Section: Soup -->
+<section>
+<div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+<h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">soup_kitchen</span>
+                        Soup
+                    </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Mushroom Soup</span>
+<span class="text-gray-400 text-sm font-normal">Creamy wild mushroom blend</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">10 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Pumpkin Cream</span>
+<span class="text-gray-400 text-sm font-normal">Roasted pumpkin seeds &amp; oil</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">12 GEL</span>
+</div>
+</div>
+</section>
+<!-- Section: Hot Dishes -->
+<section>
+<div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+<h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">skillet</span>
+                        Hot Dishes
+                    </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Grilled Salmon</span>
+<span class="text-gray-400 text-sm font-normal">Served with asparagus and lemon butter</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">35 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Chicken Steak</span>
+<span class="text-gray-400 text-sm font-normal">Grilled breast with mushroom sauce</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">20 GEL</span>
+</div>
+</div>
+</section>
+<!-- Section: Salads -->
+<section>
+<div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+<h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">nutrition</span>
+                        Salads
+                    </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Caesar Salad</span>
+<span class="text-gray-400 text-sm font-normal">Chicken, parmesan, croutons</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">18 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Greek Salad</span>
+<span class="text-gray-400 text-sm font-normal">Feta, olives, cucumber, tomato</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">15 GEL</span>
+</div>
+</div>
+</section>
+<!-- Section: Garnish -->
+<section>
+<div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+<h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">rice_bowl</span>
+                        Garnish
+                    </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">French Fries</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">7 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Grilled Vegetables</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">10 GEL</span>
+</div>
+</div>
+</section>
+<!-- Section: Dessert -->
+<section>
+<div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+<h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">icecream</span>
+                        Dessert
+                    </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Cheesecake</span>
+<span class="text-gray-400 text-sm font-normal">Classic New York style with berry compote</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">12 GEL</span>
+</div>
+<!-- Item -->
+<div class="group flex justify-between items-baseline py-4 border-b border-white/5 hover:border-white/20 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-medium group-hover:text-primary transition-colors">Brownie</span>
+<span class="text-gray-400 text-sm font-normal">Warm chocolate brownie with vanilla ice cream</span>
+</div>
+<span class="text-primary font-bold text-lg whitespace-nowrap ml-4">10 GEL</span>
+</div>
+</div>
+</section>
+
+<!-- Section: About -->
+<a id="about"></a>
+<section>
+  <div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+    <h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+      <span class="material-symbols-outlined text-primary">psychiatry</span>
+      About Terrace Bar
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="flex flex-col gap-4">
+      <p class="text-gray-300 leading-relaxed">Nestled in the heart of Tbilisi, Terrace Bar blends moody ambiance with crafted cocktails and modern bites. Our terrace setting is designed for effortless evenings with friends, intimate dates, and late-night energy.</p>
+      <p class="text-gray-400">We focus on seasonal ingredients, thoughtful service, and a soundscape that evolves through the night.</p>
+    </div>
+    <div class="rounded-xl overflow-hidden border border-white/10">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBilo8On7eB3KfE7Fd4i6t17yRo1_AYvipSOf8Gb1awD3mRRAjl4shEEzxrJnaZyqEL07-4ZGrW45y1hGxzhNyf8fB5V_h0OoM5qWjCfwrXXeEPMKmb3vdvxZh6KQQc6odAXA33lq4lliAq7ngyQPhkFcp2JQyURTv7sUNhS1pVDUcmD2uqBfGr8GLAzAo-Utp7e3W1Li3yR3SwXmUzlLhhpQLvcvTf3rQW7TQUlWGzn9qAojvlts7XK91oGVlFQm3SZkvTITBOUk" alt="Terrace ambience" class="w-full h-full object-cover" />
+    </div>
+  </div>
+</section>
+
+<!-- Section: Find Us / Contact -->
+<a id="contact"></a>
+<section>
+  <div class="sticky top-0 z-20 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 mb-4">
+    <h2 class="text-white text-2xl font-bold tracking-tight flex items-center gap-3">
+      <span class="material-symbols-outlined text-primary">location_on</span>
+      Find Us & Contact
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <!-- Left Column: Info & Map (5 cols) -->
+    <div class="lg:col-span-5 flex flex-col gap-10">
+      <div class="flex flex-col gap-8">
+        <div class="flex gap-5 items-start">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+            <span class="material-symbols-outlined text-2xl">location_on</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold text-white">Address</h3>
+            <p class="text-gray-300">7 Doki Turn, Tbilisi, Georgia</p>
+          </div>
+        </div>
+        <div class="flex gap-5 items-start">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+            <span class="material-symbols-outlined text-2xl">call</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold text-white">Contact</h3>
+            <p class="text-gray-300">xxxxxxxxxx</p>
+            <p class="text-gray-300">xxxxxxxxxx</p>
+          </div>
+        </div>
+        <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/10 group">
+          <div class="w-full h-full bg-cover bg-center grayscale contrast-[1.1] transition-transform duration-700 ease-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMNZn1NrD86V6miv2SBIYzfFiAT-qHiCkjyvsaLyDWObERDvQdZ0-hE96f7qffCCYoGuDZCCciO9mG1zE9p00FYlK7roRldxXEAnprKojeizb7w_TjKKKQGvnrxbE6eWAoJPRG5uAXvZYkxrqcG3kDdG_SlLQmSntmygf7Zbb0oNyYgPkBMcns1rlCpVcl9lLBxKnJgg-1i_haDev2KQqpir18QrlPwcivkwefwCX1nyo5uGC4yQEf9fMu1BwLOL1eNDUVfGLSvp4");'></div>
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="relative flex h-14 w-14 items-center justify-center">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-50"></span>
+              <span class="relative inline-flex rounded-full h-10 w-10 bg-primary items-center justify-center shadow-lg shadow-black/50">
+                <span class="material-symbols-outlined text-black text-xl">restaurant</span>
+              </span>
+            </div>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <a href="https://www.google.com/maps/search/?api=1&query=7+Doki+Turn+Tbilisi+Georgia" target="_blank" rel="noopener" class="w-full bg-background-dark/70 backdrop-blur-md text-white text-sm font-semibold py-3 px-4 rounded-full shadow-lg border border-white/20 hover:bg-black transition-colors flex items-center justify-center gap-2 group/btn">
+              Get Directions
+              <span class="material-symbols-outlined text-base transition-transform group-hover/btn:translate-x-1">arrow_outward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right Column: Reservation Form (7 cols) -->
+    <div class="lg:col-span-7">
+      <div class="bg-white/5 rounded-lg p-6 sm:p-10 border border-white/10 shadow-xl backdrop-blur-sm">
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white">Make a Reservation</h3>
+          <p class="text-gray-400 mt-2">Reserve your spot at the terrace. For large parties, please contact us directly.</p>
+        </div>
+        <form class="flex flex-col gap-6" onsubmit="event.preventDefault();">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="text-sm font-semibold text-gray-300 ml-1" for="fullname2">Full Name</label>
+              <input id="fullname2" type="text" placeholder="Enter your name" class="w-full bg-black/20 border border-white/10 text-white placeholder:text-gray-400 rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-sm font-semibold text-gray-300 ml-1" for="email2">Email Address</label>
+              <input id="email2" type="email" placeholder="you@example.com" class="w-full bg-black/20 border border-white/10 text-white placeholder:text-gray-400 rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="text-sm font-semibold text-gray-300 ml-1" for="phone2">Phone Number</label>
+              <input id="phone2" type="tel" placeholder="xxxxxxxxxx" class="w-full bg-black/20 border border-white/10 text-white placeholder:text-gray-400 rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-sm font-semibold text-gray-300 ml-1" for="guests2">Party Size</label>
+              <div class="relative">
+                <select id="guests2" class="w-full bg-black/20 border border-white/10 text-white rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none cursor-pointer">
+                  <option>2 People</option>
+                  <option>3 People</option>
+                  <option>4 People</option>
+                  <option>5 People</option>
+                  <option>6+ People</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">expand_more</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-semibold text-gray-300 ml-1" for="datetime2">Date & Time</label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">calendar_month</span>
+              <input id="datetime2" type="datetime-local" class="w-full bg-black/20 border border-white/10 text-white rounded-full pl-12 pr-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all [color-scheme:dark]" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-sm font-semibold text-gray-300 ml-1" for="message2">Special Requests</label>
+            <textarea id="message2" rows="4" placeholder="Any dietary restrictions or special occasions?" class="w-full bg-black/20 border border-white/10 text-white placeholder:text-gray-400 rounded-lg px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"></textarea>
+          </div>
+          <div class="pt-2">
+            <button type="submit" class="w-full bg-primary hover:bg-[#15c55a] text-background-dark font-bold text-lg rounded-full py-4 transition-all duration-300 shadow-[0_0_20px_rgba(25,230,107,0.25)] hover:shadow-[0_0_30px_rgba(25,230,107,0.4)] transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group">
+              Confirm Reservation
+              <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-8 right-8 z-50">
+<button id="reserveFab" class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 px-6 rounded-full shadow-lg shadow-primary/20 flex items-center gap-2 transition-transform hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined">table_restaurant</span>
+<span class="hidden md:inline">Reserve a Table</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="w-full bg-surface-dark py-12 px-6 flex justify-center border-t border-white/5">
+<div class="max-w-[960px] w-full flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<p class="text-white text-xl font-bold tracking-tight">Terrace Bar</p>
+<p class="text-gray-400 text-sm mt-1">Open daily from 6 PM to 2 AM</p>
+</div>
+<div class="flex gap-6">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<!-- Simple social icon placeholder -->
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+<script>
+  // Scroll handlers for Reserve buttons
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  document.getElementById('reserveBtn')?.addEventListener('click', scrollToContact);
+  document.getElementById('reserveHeroBtn')?.addEventListener('click', scrollToContact);
+  document.getElementById('reserveFab')?.addEventListener('click', scrollToContact);
+  // Mask any visible phone/email strings just in case
+  document.querySelectorAll('a[href^="mailto:"], a[href^="tel:"]').forEach(a => { a.textContent = 'xxxxxxxxxx'; });
+  // Navbar show/hide based on hero visibility
+  const nav = document.getElementById('siteNav');
+  const hero = document.getElementById('hero');
+  if (nav && hero) {
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries[0].isIntersecting;
+      nav.classList.toggle('opacity-0', !visible);
+      nav.classList.toggle('pointer-events-none', !visible);
+      nav.classList.toggle('-translate-y-1', !visible);
+      nav.classList.toggle('scale-95', !visible);
+    }, { threshold: 0.2 });
+    io.observe(hero);
+  }
+</script>
+</body></html>
+
+<!-- About Terrace Bar -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Terrace Bar</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e66b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
 <style>
-        /* Custom scrollbar for webkit */
+        /* Custom scrollbar for better aesthetic */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -391,981 +786,444 @@
             background: #112117; 
         }
         ::-webkit-scrollbar-thumb {
-            background: #29382f; 
+            background: #2d3b32; 
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #36e27b; 
-        }
-        html {
-            scroll-behavior: smooth;
+            background: #19e66b; 
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex flex-col antialiased">
-<!-- Navbar -->
-<header class="sticky top-0 z-50 w-full border-b border-[#29382f]/50 bg-background-dark/80 backdrop-blur-md">
-<div class="max-w-[1280px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="size-8 text-primary">
-<span class="material-symbols-outlined text-3xl">local_bar</span>
-</div>
-<h1 class="text-white text-xl font-bold tracking-tight">Terrace Bar</h1>
-</div>
-<!-- Desktop Nav -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">About</a>
-<a class="text-white hover:text-primary transition-colors text-sm font-medium" href="#">Menu</a>
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Reservations</a>
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium" href="#">Contact</a>
-</nav>
-<button class="bg-primary hover:bg-primary/90 text-background-dark px-6 py-2.5 rounded-full text-sm font-bold transition-all transform active:scale-95 shadow-[0_0_15px_rgba(54,226,123,0.3)]">
-                Book a Table
-            </button>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="relative h-[400px] w-full flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 bg-background-dark/60 z-10"></div>
-<div class="absolute inset-0 bg-cover bg-center" data-alt="Elegant dark moody restaurant cocktail bar atmosphere with soft lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWQph-l9El6387wduA1VUDTKf100VsH065_KesuLPvSql9_K0lcubwjTZzma_vUF5f1H42kfNcIMefU45fLFTa32x3zAYjKHfzyv-NqQ4OPltAe3UsTKT_5qMkt1lctZ6RaqN5Kj0pMyy-g3qE1rY7QLQVIrYuBx5FV8HunZ0LsugBnoGQZPBqHs12-sYhedOkQhLmpRu15317SA4tYGcdVg2we0Ssqical6eCQRIYK7KqlshtOcI6skVfD5aHA_OopxEY4FrJ6GU');"></div>
-<div class="relative z-20 text-center max-w-2xl px-4 flex flex-col items-center gap-4">
-<div class="size-16 rounded-full border border-primary/30 flex items-center justify-center bg-background-dark/50 backdrop-blur-sm mb-2">
-<span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
-</div>
-<h2 class="text-5xl md:text-6xl font-black text-white tracking-tight">Our Menu</h2>
-<p class="text-gray-300 text-lg md:text-xl font-light max-w-lg">Experience the refined taste of Terrace Bar. A culinary journey crafted with passion.</p>
-</div>
-</section>
-<!-- Sticky Category Nav -->
-<div class="sticky top-20 z-40 bg-background-dark border-b border-[#29382f] py-4 shadow-lg">
-<div class="max-w-[1280px] mx-auto px-6 overflow-x-auto no-scrollbar">
-<div class="flex gap-3 min-w-max">
-<a class="px-6 py-2.5 rounded-full bg-primary text-background-dark font-bold text-sm hover:bg-primary/90 transition-colors" href="#snacks">Snacks</a>
-<a class="px-6 py-2.5 rounded-full bg-surface-dark border border-[#29382f] text-gray-300 font-medium text-sm hover:text-white hover:border-primary/50 transition-colors" href="#pizza">Pizza &amp; Khachapuri</a>
-<a class="px-6 py-2.5 rounded-full bg-surface-dark border border-[#29382f] text-gray-300 font-medium text-sm hover:text-white hover:border-primary/50 transition-colors" href="#soup">Soup</a>
-<a class="px-6 py-2.5 rounded-full bg-surface-dark border border-[#29382f] text-gray-300 font-medium text-sm hover:text-white hover:border-primary/50 transition-colors" href="#hot-dishes">Hot Dishes</a>
-<a class="px-6 py-2.5 rounded-full bg-surface-dark border border-[#29382f] text-gray-300 font-medium text-sm hover:text-white hover:border-primary/50 transition-colors" href="#salads">Salads</a>
-<a class="px-6 py-2.5 rounded-full bg-surface-dark border border-[#29382f] text-gray-300 font-medium text-sm hover:text-white hover:border-primary/50 transition-colors" href="#garnish">Garnish</a>
-<a class="px-6 py-2.5 rounded-full bg-surface-dark border border-[#29382f] text-gray-300 font-medium text-sm hover:text-white hover:border-primary/50 transition-colors" href="#dessert">Dessert</a>
-</div>
-</div>
-</div>
-<!-- Main Content -->
-<main class="flex-grow max-w-[1280px] mx-auto px-6 md:px-10 py-12 w-full space-y-24">
-<!-- Snacks Section -->
-<section class="scroll-mt-48" id="snacks">
-<div class="flex items-end justify-between mb-8 pb-4 border-b border-[#29382f]">
-<h3 class="text-3xl font-bold text-white tracking-tight">Snacks</h3>
-<span class="text-primary text-sm font-medium uppercase tracking-widest opacity-80">Starters</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-<!-- Item -->
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Wine board</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">69.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">Assorted selection for wine pairing</p>
-</div>
-<!-- Item -->
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Focaccio with garlic and parmesan</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">18.00 GEL</span>
-</div>
-</div>
-<!-- Item -->
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Bruschetta with avocado</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">17.00 GEL</span>
-</div>
-</div>
-<!-- Item -->
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Bruschetta with salmon</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">19.00 GEL</span>
-</div>
-</div>
-<!-- Item -->
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Salmon Burger</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">43.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">Served with signature sauce</p>
-</div>
-<!-- Item -->
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Quesadilla</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">31.00 GEL</span>
-</div>
-</div>
-<!-- Item -->
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Olives</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">13.00 GEL</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Pizza & Khachapuri Section -->
-<section class="scroll-mt-48" id="pizza">
-<div class="flex items-end justify-between mb-8 pb-4 border-b border-[#29382f]">
-<h3 class="text-3xl font-bold text-white tracking-tight">Pizza &amp; Khachapuri</h3>
-<span class="text-primary text-sm font-medium uppercase tracking-widest opacity-80">Bakery</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Khachapuri of Adjara</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">29.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Megrelian khachapuri</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">31.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Khachapuri imeruli</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">25.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Pizzetta with 4 types of cheese</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">31.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Pizzetta pepperoni</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">28.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Bacon pizza</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">27.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Pizzetta with seafood</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">35.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Four Seasons Pizza</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">34.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Vegetable pizza</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">24.00 GEL</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Soup Section -->
-<section class="scroll-mt-48" id="soup">
-<div class="flex items-end justify-between mb-8 pb-4 border-b border-[#29382f]">
-<h3 class="text-3xl font-bold text-white tracking-tight">Soup</h3>
-<span class="text-primary text-sm font-medium uppercase tracking-widest opacity-80">Warm</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Sea chowder</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">35.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Thai chicken soup</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">32.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">With coconut milk and mushrooms</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Mushroom cream soup</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">28.00 GEL</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Hot Dishes Section -->
-<section class="scroll-mt-48" id="hot-dishes">
-<div class="flex items-end justify-between mb-8 pb-4 border-b border-[#29382f]">
-<h3 class="text-3xl font-bold text-white tracking-tight">Hot Dishes</h3>
-<span class="text-primary text-sm font-medium uppercase tracking-widest opacity-80">Mains</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Carbonara</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">27.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Pasta with seafood</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">36.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Mussels in cream</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">33.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">Served with black paste</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Alfredo pasta</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">29.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">With ham and mushrooms</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Pasta with salmon</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">33.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Mussels in white wine</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">36.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">King prawns fried</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">39.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">In garlic oil with Asian sweet and spicy sauce</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Panko shrimp</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">28.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Squid rings</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">31.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Chicken fillet in lemon sauce</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">27.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Chicken steak</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">29.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">With mushrooms and cream</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Chicken wings in Asian sauce</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">24.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Veal stewed in red wine</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">36.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">With baked pear</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Salmon with shrimp</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">56.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">With cream and cognac</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Salmon steak with lime sauce</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">46.00 GEL</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Salads Section -->
-<section class="scroll-mt-48" id="salads">
-<div class="flex items-end justify-between mb-8 pb-4 border-b border-[#29382f]">
-<h3 class="text-3xl font-bold text-white tracking-tight">Salads</h3>
-<span class="text-primary text-sm font-medium uppercase tracking-widest opacity-80">Fresh</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Arugula shrimp salad</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">41.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">Cherry tomatoes with walnuts and parmesan</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Salad with grapefruit</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">28.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">Cream cheese with citrus dressing and caramelized balsamic</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Salmon salad</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">39.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">Soft cheese, cherry tomatoes, avocado in hot sauce</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Mixed salad</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">31.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">Wild mushrooms and walnuts in honey mustard sauce</p>
-</div>
-</div>
-</section>
-<!-- Garnish Section -->
-<section class="scroll-mt-48" id="garnish">
-<div class="flex items-end justify-between mb-8 pb-4 border-b border-[#29382f]">
-<h3 class="text-3xl font-bold text-white tracking-tight">Garnish</h3>
-<span class="text-primary text-sm font-medium uppercase tracking-widest opacity-80">Sides</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">French fries</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">11.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">French fries with cheese</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">20.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Mexican potatoes</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">14.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Fried mushrooms</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">18.00 GEL</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Dessert Section -->
-<section class="scroll-mt-48" id="dessert">
-<div class="flex items-end justify-between mb-8 pb-4 border-b border-[#29382f]">
-<h3 class="text-3xl font-bold text-white tracking-tight">Dessert</h3>
-<span class="text-primary text-sm font-medium uppercase tracking-widest opacity-80">Sweet</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Apple strudel</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">22.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">With ice cream</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Brownie classic</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">23.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Cheesecake</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">28.00 GEL</span>
-</div>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Saperavi branded ice cream</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">28.00 GEL</span>
-</div>
-<p class="text-gray-400 text-sm font-light">From our chef</p>
-</div>
-<div class="group flex flex-col gap-1">
-<div class="flex justify-between items-baseline">
-<h4 class="text-lg font-semibold text-white group-hover:text-primary transition-colors">Carrot cake</h4>
-<span class="text-primary font-bold whitespace-nowrap ml-4">21.00 GEL</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Bottom CTA -->
-<div class="mt-20 flex justify-center pb-20">
-<div class="bg-surface-dark p-10 rounded-2xl w-full text-center border border-[#29382f]">
-<h3 class="text-2xl font-bold text-white mb-2">Ready to order?</h3>
-<p class="text-gray-400 mb-6 max-w-md mx-auto">Visit us to taste these delicious dishes or book a table in advance.</p>
-<button class="bg-primary hover:bg-primary/90 text-background-dark px-10 py-3 rounded-full text-base font-bold transition-all shadow-lg">
-                    Book a Table
-                </button>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="bg-background-dark border-t border-[#29382f] py-12">
-<div class="max-w-[1280px] mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="flex items-center gap-3">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined text-2xl">local_bar</span>
-</div>
-<span class="text-white text-lg font-bold">Terrace Bar</span>
-</div>
-<div class="flex gap-8 text-gray-400 text-sm">
-<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a class="hover:text-primary transition-colors" href="#">Cookies</a>
-</div>
-<div class="text-gray-500 text-sm">
-                © 2023 Terrace Bar. All rights reserved.
-            </div>
-</div>
-</footer>
-</body></html>
-
-<!-- Terrace Bar About Page -->
-<html class="dark"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Terrace Bar - About Us</title>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#D0BB95", "background-light": "#f7f7f6", "background-dark": "#1d1a15", "surface-dark": "#1c2620", "surface-light": "#ffffff"}, fontFamily: {display: "Newsreader", body: ["Noto Sans", "sans-serif"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
-<style>
-        body {
-            font-family: 'Spline Sans', sans-serif;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark text-[#111714] dark:text-white transition-colors duration-200">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-<!-- Navigation -->
-<header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#29382f] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-<div class="px-4 md:px-10 py-3 flex items-center justify-between mx-auto max-w-[1440px]">
-<div class="flex items-center gap-4">
-<div class="size-8 text-primary">
-<span class="material-symbols-outlined !text-3xl">deck</span>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Terrace Bar</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
-<nav class="flex items-center gap-9">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Menu</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Events</a>
-<a class="text-sm font-medium text-primary" href="#">About Us</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
-</nav>
-<div class="flex gap-2">
-<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-[#111714] text-sm font-bold hover:opacity-90 transition-opacity">
-                            Reserve a Table
-                        </button>
-</div>
-</div>
-<button class="md:hidden p-2 text-current">
-<span class="material-symbols-outlined">menu</span>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-background-dark">
+<div class="relative w-full flex-grow flex flex-col items-center justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8">
+<!-- Background Ambient Glow -->
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="w-full max-w-7xl relative z-10 flex flex-col gap-16 md:gap-24">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center space-y-4 animate-fade-in-up">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Our Story</span>
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">
+                    Dining Under the Stars
+                </h2>
+<div class="h-1 w-24 bg-primary rounded-full mt-2"></div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Left Column: Text Content -->
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="relative">
+<!-- Glassmorphism Card Effect -->
+<div class="absolute -inset-4 bg-white/5 dark:bg-white/5 rounded-xl blur-sm -z-10"></div>
+<h3 class="text-3xl md:text-4xl font-bold leading-tight mb-6">
+                            Authentic Georgian Flavors in a <span class="text-primary">Modern Oasis</span>
+</h3>
+<div class="space-y-6 text-lg text-slate-600 dark:text-gray-300 font-body leading-relaxed">
+<p>
+                                Welcome to Terrace Bar, where tradition meets the electric energy of the night. Our vibrant terrace oasis invites you to escape the city noise and immerse yourself in the warmth of true Georgian hospitality.
+                            </p>
+<p>
+                                We believe in the power of <span class="text-primary font-semibold">farm-fresh ingredients</span>. From our signature cheesy Khachapuri pulled straight from the oven to our locally sourced herbs and meats, every dish tells a story of authenticity and passion.
+                            </p>
+<p>
+                                Whether you're here for a romantic evening or a lively gathering with friends, the cozy atmosphere and open sky create the perfect backdrop for memories that last.
+                            </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="group flex items-center justify-center gap-2 h-14 px-8 bg-primary hover:bg-primary/90 transition-all duration-300 rounded-full text-background-dark text-base font-bold shadow-[0_0_20px_rgba(25,230,107,0.3)] hover:shadow-[0_0_30px_rgba(25,230,107,0.5)]">
+<span>View Full Menu</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">restaurant_menu</span>
+</button>
+<button class="group flex items-center justify-center gap-2 h-14 px-8 bg-transparent border-2 border-slate-200 dark:border-white/20 hover:border-primary hover:text-primary transition-all duration-300 rounded-full text-slate-900 dark:text-white text-base font-bold">
+<span>Reserve a Table</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">calendar_today</span>
 </button>
 </div>
-</header>
-<main class="flex-1 w-full mx-auto max-w-[1440px] px-4 md:px-10 lg:px-20 py-8 flex flex-col gap-16 md:gap-24">
-<!-- Hero Section -->
-<section class="relative w-full rounded-xl overflow-hidden min-h-[500px] flex items-center justify-center">
-<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="Modern rooftop terrace bar at sunset with city lights of Tbilisi in background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOIMv9T4LSlH0zU2FLQiQrZka_87Z06yQdgUVhYsj5rPcJm1-46iSw4HyVK1HeU3bFk09-PP-fxUCXVUCNLN0h3FcTjoK6j4xTPoI-cObg4JHFiCNzrflQBKzEa-DofzBtnRe0eK2x_Z530PhmKIOdbR8bki0FgMAvZuXpoJ483dtYulS64D1hFP0PXCpJvD2nLy-CnnGt19HyCtFQuJm9q9MaBAhznZz3h2huFdn_yHMNPkJNyYAK0vSDkQUw5Rbmzf-djPzQM6Y");'>
+<!-- Highlights -->
+<div class="grid grid-cols-2 gap-6 mt-8 pt-8 border-t border-slate-200 dark:border-white/10">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">deck</span>
 </div>
-<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 dark:bg-black/50"></div>
-<div class="relative z-10 text-center max-w-4xl px-4 flex flex-col gap-6 items-center">
-<span class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-wider uppercase">
-                        Since 2018
-                    </span>
-<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
-                        A Taste of Tbilisi<br/><span class="text-primary">Above the City</span>
-</h1>
-<p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl leading-relaxed">
-                        Experience elevated Georgian dining where modern culinary art meets traditional hospitality, all under the open sky.
-                    </p>
+<span class="font-bold text-sm md:text-base">Open-Air Terrace</span>
 </div>
-</section>
-<!-- Story Section -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="flex flex-col gap-6 lg:pr-10">
-<h2 class="text-3xl md:text-4xl font-bold tracking-tight">Our Philosophy</h2>
-<div class="h-1 w-20 bg-primary rounded-full"></div>
-<p class="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Located in the vibrant heart of Tbilisi, Terrace Bar offers more than just a view. It offers a perspective. We believe that great food tastes better in the open air, surrounded by the pulsating energy of the city.
-                    </p>
-<p class="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Our culinary team reimagines Georgian classics with a contemporary twist. We honor the deep-rooted traditions of our region while embracing modern techniques that highlight the natural flavors of our locally sourced ingredients.
-                    </p>
-<div class="grid grid-cols-2 gap-4 mt-4">
-<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-[#29382f]">
-<span class="material-symbols-outlined text-primary text-3xl">local_florist</span>
-<div>
-<h4 class="font-bold">Locally Sourced</h4>
-<span class="text-xs text-gray-500 dark:text-gray-400">Fresh daily</span>
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">local_fire_department</span>
 </div>
+<span class="font-bold text-sm md:text-base">Wood-Fired Oven</span>
 </div>
-<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-[#29382f]">
-<span class="material-symbols-outlined text-primary text-3xl">wine_bar</span>
-<div>
-<h4 class="font-bold">Natural Wines</h4>
-<span class="text-xs text-gray-500 dark:text-gray-400">Curated selection</span>
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<span class="font-bold text-sm md:text-base">Fresh Ingredients</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">wine_bar</span>
+</div>
+<span class="font-bold text-sm md:text-base">Georgian Wine</span>
 </div>
 </div>
 </div>
+<!-- Right Column: Image Collage -->
+<div class="relative h-full min-h-[500px] w-full order-1 lg:order-2">
+<div class="relative w-full h-full grid grid-cols-12 grid-rows-12 gap-4">
+<!-- Main Large Image (Terrace) -->
+<div class="col-span-8 row-span-12 relative z-10">
+<div class="w-full h-full rounded-xl overflow-hidden shadow-2xl relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Outdoor dining terrace with string lights at night" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzGlirIh63MONSaVVq9vwSr81W89P2yIwxWrdR0ys5kVbqfDajCrveiK6DfGnG-Hx8rAeaYk-HKHJvh0ZWnTG4MJ6-Vs0ENB6LtHD34mugDDdjL2CvPX_NhVblWau8o8qHO4FUsuovSuSH9yEEn72CCPi55ZdAvum27qqX4f8pd10j17viYL-3vHoYJX4mwPJbdjr0cluC0w4L5RZMgoAVQ_4L4fx3sb2vPeMcjCCiMvP54q-BHqQvnHoCGj9FKX5Q4_Z5kJfBH9U');">
 </div>
-<div class="relative h-[500px] w-full">
-<div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-xl overflow-hidden shadow-2xl z-10">
-<img alt="Closeup of a crafted cocktail on a bar counter with warm lighting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Bartender pouring a signature cocktail with garnish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy2XrsAJ_OaeAkHdiSLe0KdjM_HXOueKLyEhV7b1lWKzIYzSAjI8oSYZVYLq_bAbhRXCCmF9fp-NZl4xf6D_q-liQe4rej4JAUhx6hf9c0WDL1BYRHzQxgAWmpgbZOuIc4TxDcnyKV5F4_LNEA202A8BMipie1JScm26G03bftfys3NWXa6yqNezslqbgsVUdbHfncw7X8SsfbJI2WCjMLf1nrAWcnxSq-9qn2rDD1ifFMg_SYFRKCb2ZkoMB-e1Illp_BLNqg0ZY"/>
-</div>
-<div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-xl overflow-hidden shadow-2xl z-20 border-4 border-background-light dark:border-background-dark">
-<img alt="Chef plating a dish in the kitchen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Chef preparing fresh Khachapuri dough" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmDJTl7h9ICgn3fpoQjvu2VLB3p4hOmVAMK40meoBW366GXsEGOGvbafBZwD06H29bYu_ngqjdkQDLpwigIgp9dgn8WS_dHrLAI0wXGgxe9pD3D3F9pj3Fx887mXHF-LPKy-3FrH-dKZQ_TrIyNLvT7WL5se3MBaVj-untsgTbbnGyGvnqRlwu4jXYEkj81Bx6dGnFqOHjSk6NuDMZ6QWavw6VIWLCFABehx_JcAoRheva2Q11XW2IuD9rKgwbmQz2z07OFGtYwOQ"/>
-</div>
-</div>
-</section>
-<!-- Ingredient Highlights -->
-<section class="flex flex-col gap-10">
-<div class="text-center max-w-2xl mx-auto">
-<h2 class="text-3xl font-bold mb-4">Farm to Terrace</h2>
-<p class="text-gray-600 dark:text-gray-400">
-                        We partner with local farmers in the Kakheti and Kartli regions to bring the freshest seasonal produce directly to your plate.
-                    </p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Card 1 -->
-<div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Fresh Georgian cheese on a wooden board" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjI51Ce9CWFc_1T0P6oxwwPpxpNTsjXXXEe2c7Ie-iXzwLbErclFc2JWI4ZCGjk-xJJtZOo4h0Kvw8mopDDUU9rBZo1bSOOuULUIorvd03VvJzCQIs-kdhfnSPAjglR_4kQaxRqtprYCSvNgnfBdj3O8VhsVDq3SeEK9-xcjBj6L8X3puraw-aMWvIG9bV29pBCxgNoxpvyUjcyL-F98M2B99ocjz6LZavJWvPn6icBas2WUTJ_RkP_jWsZWIi0Liz5-daVz2uDAk");'>
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-<span class="material-symbols-outlined text-primary mb-2">chess</span>
-<h3 class="text-white text-xl font-bold">Sulguni Cheese</h3>
-<p class="text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">Used in our signature Khachapuri, sourced from Samegrelo.</p>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Fresh organic tomatoes and basil on a dark surface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1lLaRAoKhCtAmwwRPO7vflpBVMQnHO6OywZsKpYdRefXwmpRYwkxz38CjdTI0r2FO3P2CupxuJuEo4zIzUZREpyOj_OlOmff3hEl1Y-Bp4aMZCehGl8iXQzErs2baVy6-JBmPdiKyYTvHP56UB9i7uHA3eYFkOEV2GD1R6qioqOPPckg5OxZp7K_PhLfY5j5Se9CZTguiNwENY9GaS2Ed-LuBZzy8ZVyghp3NHQzLo3WIl36dfwtR03LmZhi4keTqu9nO6JRN-00");'>
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-<span class="material-symbols-outlined text-primary mb-2">nutrition</span>
-<h3 class="text-white text-xl font-bold">Organic Vegetables</h3>
-<p class="text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">Crisp, sun-ripened tomatoes and herbs for our salads.</p>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Raw spices and dough preparation" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCskRea6H2_Ugz32GsRMewbkgQlBDJO5YSGuO6WEW-wsc6odfl9sBSc-EFg1cn4oqx_BHsu9C8_G1y_foEnEwoSZ5QwvOuUkCfJRELbSG2tgjnkLr2IyNr4CJKaRDqBszOsy1NL2sRKxq0N5_HlYPEeWPUfOIrQxriRIdymkuGEdjvxOvdyiIAohPodFACfg0Vyn-Hj_lFv27Vs_x4NIyoxMuMWhnwUJAIe8pjCQZjE6Fq-oaGazvmMqS_6BJVf1Yhy0wDsABZ0yck");'>
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-<span class="material-symbols-outlined text-primary mb-2">bakery_dining</span>
-<h3 class="text-white text-xl font-bold">Artisan Dough</h3>
-<p class="text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">Fermented for 48 hours for the perfect airy crust.</p>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Fresh raw meat on a stone board with rosemary" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKjzHsEO__wMJ7O8pY2YyrSrMFAF64CJEUDZ9_dxQjMEjuIjgBXAwsWe5aqqZoOeyre7gXgdHebBAsyYmK2X2vxXZpLc2-suMRYPL-u8cEvryZ3GBpM4vYHEyJcQ2YHs_9ZqxH6a8HRgeZfFa8BXPB5bCVxeLySyzP8VlQgz96twCd7tIxf_L_AVHkWszLu0SGOt-96TeHs0gKauqG5E38_yX7HsC4HHo_qnywtDIH4M8uba27SQBwY-ET1T4uXhVjhPjYjfbOGQ4");'>
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
-<span class="material-symbols-outlined text-primary mb-2">skillet</span>
-<h3 class="text-white text-xl font-bold">Prime Cuts</h3>
-<p class="text-gray-300 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">Responsibly farmed meats for our grills and stews.</p>
+<div class="absolute bottom-6 left-6 z-20">
+<span class="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold text-white uppercase tracking-wider border border-white/10">
+                                        Terrace Vibes
+                                    </span>
 </div>
 </div>
 </div>
-</section>
-<!-- Signature Dish Focus -->
-<section class="rounded-xl overflow-hidden bg-surface-dark dark:bg-[#0d120f] border border-gray-200 dark:border-[#29382f]">
-<div class="flex flex-col md:flex-row">
-<div class="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-<span class="text-primary font-bold tracking-widest uppercase text-sm mb-2">The Crowd Favorite</span>
-<h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">Signature Adjarian Khachapuri</h2>
-<p class="text-gray-400 text-lg leading-relaxed mb-8">
-                            Our take on the boat-shaped classic. We use a blend of three local cheeses, organic egg yolk, and a generous pat of mountain butter. Baked in our stone oven until the crust is golden and crisp, while the center remains molten and rich.
-                        </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-primary hover:bg-green-400 text-[#111714] font-bold rounded-full px-8 py-3 transition-colors">
-                                View Full Menu
-                            </button>
-<button class="bg-transparent border border-gray-600 text-white font-bold rounded-full px-8 py-3 hover:bg-white/5 transition-colors">
-                                Book a Table
-                            </button>
-</div>
-</div>
-<div class="w-full md:w-1/2 bg-cover bg-center min-h-[400px]" data-alt="Top down view of a freshly baked Adjarian Khachapuri with egg yolk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWSUU1_fRmL4lWRBkKo0AvqJefj31Ws0vzH9pb6jL4ZUWzEkkQxkRSIhqAnn0LsQF66WXCaGXfHv-2SvoAENaKEoG9GC_TU8KjsThCz5BNcOVDZT5SKm59hDoH3a5dEKznz5lj6HluNzZnksdRjpXGNq0uvHR1oZHw3xII1RQ8YOrxvBiXTnfJUal4BIe84jTum7Y1Xwo9LzFasgCT8BGsabPbcrKFm2FAEi7wRubBjXCczIzzyGPWUuun-PaogWFmiBdgR_TcRNc");'>
-</div>
-</div>
-</section>
-<!-- Location Section -->
-<section class="flex flex-col gap-8">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
-<div>
-<h2 class="text-3xl font-bold">Find Us</h2>
-<p class="text-gray-500 dark:text-gray-400 mt-2">Where old town charm meets modern vibes.</p>
-</div>
-<div class="flex gap-2">
-<span class="inline-flex items-center gap-1 text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-<span class="material-symbols-outlined text-[18px]">location_on</span>
-                            Tbilisi, Georgia
-                         </span>
-</div>
-</div>
-<div class="w-full h-[400px] rounded-xl overflow-hidden relative group">
-<!-- Map Placeholder Image -->
-<img alt="Map showing location in Tbilisi" class="w-full h-full object-cover filter brightness-75 group-hover:brightness-90 transition-all duration-500" data-alt="Stylized dark map view of Tbilisi streets" data-location="Tbilisi, Georgia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDso4_8bsrdmXMGFRkFxUnQe0x4fi-n9nS-wgHotjD3OTVD2iWz5g-5UzZcSwxcRL24cbQoyHEB2iP79hotHOC-vrr-cbuR5Ig5nT4gKk7nVPcdst5ldR7TFhk6uxaXEECI6cAZ4yqUloMaJvkSLCw3F7Oz92B5TXljirw_QXNFCJNaWIayGTuIoOrvYU1I_qO0qIpkRn4DZ2BPURkoNmrlCeVq8U_1iyVwmLMySLcCLl39mxobsDOmxwVhhxy6PHQNSK8Y6GdMdw4"/>
-<!-- Stylized Map Pin Overlay -->
-<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-<div class="relative">
-<div class="w-4 h-4 bg-primary rounded-full animate-ping absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-<div class="w-12 h-12 bg-surface-dark border-4 border-primary rounded-full flex items-center justify-center relative z-10 shadow-xl">
-<span class="material-symbols-outlined text-white">restaurant</span>
-</div>
-</div>
-<div class="mt-3 bg-surface-dark/90 backdrop-blur px-4 py-2 rounded-lg border border-gray-700 shadow-lg">
-<p class="text-white font-bold text-sm">Terrace Bar</p>
-<p class="text-gray-400 text-xs">Rustaveli Ave 12</p>
+<!-- Secondary Image (Khachapuri) - Top Right -->
+<div class="col-span-5 col-start-8 row-span-6 relative z-20 mt-8 -ml-8">
+<div class="w-full h-full rounded-xl overflow-hidden shadow-2xl border-4 border-background-light dark:border-background-dark relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up of cheesy Georgian Khachapuri bread" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCCOeuriZwXF_gHwE14nU9Zf4d52j8SPfMaLiAVCkDeANzgEG88Ra_wzbJwN-97Vl6HEyZJic2o10Tz1CARKJyCnGEKJD_4_FEP_eur5tYC8YW8Hs39FA8x9ZmE2IH0Uyx2JmbDmgG8x3cmc4tiXg20VIodkjcKDpxiA8PhRudEwgxXVk1XMwS3NIGbgkpFo2jbqxLkrSaZNktIR_BexkvN8-aDfNqCxdQ-Sg4oNiXwIxZaLNXTgVAJjUIF52h1Ep4QkUN4gH-xik');">
 </div>
 </div>
 </div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full border-t border-gray-200 dark:border-[#29382f] bg-surface-light dark:bg-surface-dark mt-auto">
-<div class="max-w-[1440px] mx-auto px-4 md:px-10 py-12">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-2 text-primary">
-<span class="material-symbols-outlined !text-3xl">deck</span>
-<span class="text-xl font-bold text-[#111714] dark:text-white">Terrace Bar</span>
-</div>
-<p class="text-sm text-gray-500 dark:text-gray-400">
-                            Elevated dining experience in the heart of Tbilisi. Fresh ingredients, cozy atmosphere, unforgettable views.
-                        </p>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-base font-bold text-[#111714] dark:text-white">Explore</h4>
-<div class="flex flex-col gap-2">
-<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">Our Menu</a>
-<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">Private Events</a>
-<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">Gallery</a>
-<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">Careers</a>
-</div>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-base font-bold text-[#111714] dark:text-white">Contact</h4>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined text-base">call</span>
-<span>+995 32 200 00 00</span>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined text-base">mail</span>
-<span>hello@terracebar.ge</span>
-</div>
-<div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined text-base">location_on</span>
-<span>12 Rustaveli Ave, Tbilisi</span>
+<!-- Tertiary Image (Ingredients/Wine) - Bottom Right -->
+<div class="col-span-4 col-start-9 row-span-5 row-start-7 relative z-30 -ml-4 mt-4">
+<div class="w-full aspect-square rounded-full overflow-hidden shadow-2xl border-4 border-background-light dark:border-background-dark relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Glass of red wine with blurred background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoVgT307eZ6eQDkl577FWAi-0t3AOeog5czguoidnCpSE1CEnd4sF7f-pkfov6WA9ett_2inCrCbMiv_TGHQ0yalHF0cp-OC_aXANGJwZ4A2rD7KBFIOXNHkX6S0mcFnfiXsDl-GatS-4Iub6-nyljEFW-3BEBiQZGr4sGW6-geoTUSayfX0usXEzLMrYnFLah9SoYPySPcpHR1-oxDQzo5q5kYaOISqIgJxpIoRZyvkLWr54vpoEMJ_5BYiEWqWiyvwWbYWpxlCk');">
 </div>
 </div>
 </div>
-<div class="flex flex-col gap-4">
-<h4 class="text-base font-bold text-[#111714] dark:text-white">Opening Hours</h4>
-<div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400">
-<div class="flex justify-between">
-<span>Mon - Thu</span>
-<span>12:00 - 00:00</span>
-</div>
-<div class="flex justify-between">
-<span>Fri - Sat</span>
-<span>12:00 - 02:00</span>
-</div>
-<div class="flex justify-between">
-<span>Sunday</span>
-<span>12:00 - 00:00</span>
+<!-- Decorative floating element -->
+<div class="absolute -bottom-6 -right-6 z-0">
+<div class="w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
 </div>
 </div>
 </div>
 </div>
-<div class="border-t border-gray-200 dark:border-[#29382f] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-xs text-gray-500">© 2024 Terrace Bar. All rights reserved.</p>
-<div class="flex gap-4">
-<a class="text-gray-400 hover:text-white transition-colors" href="#">
-<span class="sr-only">Instagram</span>
-<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
-<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06h.63zm1.676 2.058c-1.067-.048-1.407-.06-4.123-.06h-.08c-2.643 0-2.987.012-4.043.06-1.064.049-1.791.218-2.427.465a2.902 2.902 0 00-1.082.705 2.902 2.902 0 00-.705 1.082c-.247.636-.416 1.363-.465 2.427-.047 1.024-.06 1.379-.06 3.808v.63c0 2.43.013 2.784.06 3.808.049 1.064.218 1.791.465 2.427a2.902 2.902 0 00.705 1.082 2.902 2.902 0 001.082.705c.636.247 1.363.416 2.427.465 1.024.047 1.379.06 3.808.06h.63c2.43 0 2.784-.013 3.808-.06 1.064-.049 1.791-.218 2.427-.465a2.902 2.902 0 001.082-.705 2.902 2.902 0 00.705-1.082c.247-.636.416-1.363.465-2.427.047-1.024.06-1.379.06-3.808v-.63c0-2.43-.013-2.784-.06-3.808-.049-1.064-.218-1.791-.465-2.427a2.902 2.902 0 00-.705-1.082 2.902 2.902 0 00-1.082-.705c-.636-.247-1.363-.416-2.427-.465zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
-</svg>
-</a>
-<a class="text-gray-400 hover:text-white transition-colors" href="#">
-<span class="sr-only">Facebook</span>
-<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
-<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
-</svg>
-</a>
 </div>
-</div>
-</div>
-</footer>
 </div>
 </body></html>
 
-<a id="contact"></a>
-<!-- Terrace Bar Location & Contact -->
+<!-- Terrace Bar Find Us -->
 <!DOCTYPE html>
 
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Terrace Bar - Location &amp; Contact</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600;700&amp;family=Newsreader:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+<title>Terrace Bar - Find Us</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Theme Config -->
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#D0BB95", "background-light": "#f7f7f6", "background-dark": "#1d1a15", "surface-dark": "#1a2c22"}, fontFamily: {display: "Newsreader", body: ["Noto Sans", "sans-serif"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e66b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#111714] dark:text-white antialiased overflow-x-hidden">
-<div class="relative flex min-h-screen w-full flex-col group/design-root">
-<!-- Navigation -->
-<header class="sticky top-0 z-50 w-full border-b border-solid border-b-[#29382f] bg-background-dark/80 backdrop-blur-md">
-<div class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
-<div class="flex items-center gap-4 text-white">
-<div class="size-8 text-primary">
-<span class="material-symbols-outlined text-3xl">local_bar</span>
-</div>
-<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Terrace Bar</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
-<nav class="flex items-center gap-9">
-<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Home</a>
-<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Menu</a>
-<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Reservations</a>
-<a class="text-primary text-sm font-bold leading-normal" href="#">Contact</a>
-</nav>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#111714] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors duration-300">
-<span class="truncate">Book a Table</span>
-</button>
-</div>
-<div class="md:hidden text-white">
-<span class="material-symbols-outlined cursor-pointer">menu</span>
-</div>
-</div>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111814] dark:text-white min-h-screen flex items-center justify-center overflow-x-hidden selection:bg-primary selection:text-black">
+<main class="w-full max-w-[1280px] px-6 py-12 lg:px-12 lg:py-20 flex flex-col gap-12 lg:gap-20">
+<!-- Section Header -->
+<header class="flex flex-col gap-4 max-w-2xl animate-fade-in-up">
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white leading-[0.9]">
+                Visit The <span class="text-primary">Terrace</span>
+</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400 max-w-md leading-relaxed">
+                Experience the best nightlife in Tbilisi. Find us in the heart of the city for unforgettable evenings.
+            </p>
 </header>
-<!-- Main Content -->
-<main class="layout-container flex grow flex-col">
-<!-- Hero Section -->
-<div class="w-full flex justify-center py-10 md:py-16">
-<div class="flex flex-col max-w-[1280px] w-full px-6 lg:px-10">
-<div class="flex flex-col gap-3 max-w-2xl">
-<h1 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Find Us</h1>
-<p class="text-[#9eb7a8] text-lg font-normal leading-normal max-w-lg">Experience the vibe at 7 Doki Turn, Tbilisi. We are open late for drinks, dinner, and good times.</p>
-</div>
-</div>
-</div>
-<!-- Content Grid: Contact Info & Form -->
-<div class="w-full flex justify-center pb-12">
-<div class="max-w-[1280px] w-full px-6 lg:px-10">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-<!-- Left Column: Contact Details -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+<!-- Left Column: Info & Map (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-10">
+<!-- Info Cards -->
 <div class="flex flex-col gap-8">
-<div>
-<h2 class="text-white tracking-light text-[28px] font-bold leading-tight text-left pb-6">Contact Details</h2>
-<div class="flex flex-col gap-4">
-<!-- Address -->
-<div class="flex items-center gap-5 p-4 rounded-xl bg-surface-dark border border-[#29382f]/50 hover:border-primary/50 transition-colors group">
-<div class="text-white flex items-center justify-center rounded-full bg-[#29382f] shrink-0 size-12 group-hover:bg-primary group-hover:text-background-dark transition-colors">
-<span class="material-symbols-outlined">location_on</span>
+<!-- Address Block -->
+<div class="flex gap-5 items-start">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">location_on</span>
 </div>
-<div class="flex flex-col">
-<span class="text-[#9eb7a8] text-xs font-semibold uppercase tracking-wider">Address</span>
-<p class="text-white text-base font-medium leading-normal">7 Doki Turn, Tbilisi, Georgia</p>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-black dark:text-white">Address</h3>
+<p class="text-gray-600 dark:text-gray-300">7 Doki Turn, Tbilisi, Georgia</p>
 </div>
 </div>
-<!-- Phone -->
-<div class="flex items-center gap-5 p-4 rounded-xl bg-surface-dark border border-[#29382f]/50 hover:border-primary/50 transition-colors group">
-<div class="text-white flex items-center justify-center rounded-full bg-[#29382f] shrink-0 size-12 group-hover:bg-primary group-hover:text-background-dark transition-colors">
-<span class="material-symbols-outlined">call</span>
+<!-- Contact Block -->
+<div class="flex gap-5 items-start">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">call</span>
 </div>
-<div class="flex flex-col">
-<span class="text-[#9eb7a8] text-xs font-semibold uppercase tracking-wider">Phone</span>
-<p class="text-white text-base font-medium leading-normal">+995 32 200 0000</p>
-</div>
-</div>
-<!-- Email -->
-<div class="flex items-center gap-5 p-4 rounded-xl bg-surface-dark border border-[#29382f]/50 hover:border-primary/50 transition-colors group">
-<div class="text-white flex items-center justify-center rounded-full bg-[#29382f] shrink-0 size-12 group-hover:bg-primary group-hover:text-background-dark transition-colors">
-<span class="material-symbols-outlined">mail</span>
-</div>
-<div class="flex flex-col">
-<span class="text-[#9eb7a8] text-xs font-semibold uppercase tracking-wider">Email</span>
-<p class="text-white text-base font-medium leading-normal">reservations@terracebar.ge</p>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-black dark:text-white">Contact</h3>
+<p class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer">+995 xx xxx xxxx</p>
+<p class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer">hello@terracebar.ge</p>
 </div>
 </div>
-<!-- Hours -->
-<div class="flex items-start gap-5 p-4 rounded-xl bg-surface-dark border border-[#29382f]/50 hover:border-primary/50 transition-colors group">
-<div class="text-white flex items-center justify-center rounded-full bg-[#29382f] shrink-0 size-12 group-hover:bg-primary group-hover:text-background-dark transition-colors">
-<span class="material-symbols-outlined">schedule</span>
+<!-- Hours Block -->
+<div class="flex gap-5 items-start">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-2xl">schedule</span>
 </div>
-<div class="flex flex-col gap-1 w-full">
-<span class="text-[#9eb7a8] text-xs font-semibold uppercase tracking-wider">Opening Hours</span>
-<div class="flex justify-between w-full text-sm text-white/90">
-<span>Mon - Thu</span>
-<span>12:00 PM - 11:00 PM</span>
-</div>
-<div class="flex justify-between w-full text-sm text-white/90">
-<span>Fri - Sat</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-black dark:text-white">Opening Hours</h3>
+<div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-gray-600 dark:text-gray-300">
+<span>Mon-Sun</span>
 <span>12:00 PM - 02:00 AM</span>
 </div>
-<div class="flex justify-between w-full text-sm text-white/90">
-<span>Sunday</span>
-<span>11:00 AM - 11:00 PM</span>
 </div>
 </div>
 </div>
+<!-- Embedded Map Card -->
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-gray-200 dark:border-white/10 group">
+<!-- Map Visual -->
+<div class="w-full h-full bg-cover bg-center grayscale contrast-[1.1] dark:invert-[0.9] dark:brightness-75 transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Stylized dark map showing the location of 7 Doki Turn, Tbilisi" data-location="Tbilisi, Georgia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMNZn1NrD86V6miv2SBIYzfFiAT-qHiCkjyvsaLyDWObERDvQdZ0-hE96f7qffCCYoGuDZCCciO9mG1zE9p00FYlK7roRldxXEAnprKojeizb7w_TjKKKQGvnrxbE6eWAoJPRG5uAXvZYkxrqcG3kDdG_SlLQmSntmygf7Zbb0oNyYgPkBMcns1rlCpVcl9lLBxKnJgg-1i_haDev2KQqpir18QrlPwcivkwefwCX1nyo5uGC4yQEf9fMu1BwLOL1eNDUVfGLSvp4");'></div>
+<!-- Overlay Pin -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative flex h-14 w-14 items-center justify-center">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-50"></span>
+<span class="relative inline-flex rounded-full h-10 w-10 bg-primary items-center justify-center shadow-lg shadow-black/50">
+<span class="material-symbols-outlined text-black text-xl">restaurant</span>
+</span>
 </div>
 </div>
-<!-- Socials -->
-<div>
-<h3 class="text-white font-bold text-lg mb-4">Follow Us</h3>
-<div class="flex gap-3">
-<a class="size-10 rounded-full bg-[#29382f] flex items-center justify-center text-white hover:bg-primary hover:text-background-dark transition-all" href="#">
-<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.49 2.952l-.123.046a7.614 7.614 0 00-2.695.918c-.802.483-1.63 1.144-2.148 1.968-.28.442-.516 1.013-.516 1.013s-.297.802-.455 1.474c-.137.584-.188 1.306-.188 1.306s-.006.577-.006.843v.308c.004.914.044 1.25.12 1.58.156.674.455 1.474.455 1.474s.236.57.516 1.013c.518.824 1.346 1.485 2.148 1.968.694.417 1.632.747 2.695.918.04.007.247.007.247.007l.162.007c2.31 0 2.585-.01 3.518-.052.923-.042 1.424-.187 1.764-.32.447-.173.766-.379 1.1-.714.335-.334.541-.653.714-1.1.133-.34.278-.841.32-1.764.042-.933.052-1.208.052-3.518 0-2.31-.01-2.585-.052-3.518-.042-.923-.187-1.424-.32-1.764a2.95 2.95 0 00-.714-1.1 2.952 2.952 0 00-1.1-.714c-.34-.133-.841-.278-1.764-.32-.933-.042-1.208-.052-3.518-.052zm-3.266 5.617c1.325 0 2.4 1.075 2.4 2.4s-1.075 2.4-2.4 2.4-2.4-1.075-2.4-2.4 1.075-2.4 2.4-2.4zm3.844-3.08a1.44 1.44 0 110 2.88 1.44 1.44 0 010-2.88z" fill-rule="evenodd"></path></svg>
-</a>
-<a class="size-10 rounded-full bg-[#29382f] flex items-center justify-center text-white hover:bg-primary hover:text-background-dark transition-all" href="#">
-<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
-</a>
+<!-- Directions Link Overlay -->
+<div class="absolute bottom-4 left-4 right-4">
+<button class="w-full bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md text-black dark:text-white text-sm font-semibold py-3 px-4 rounded-full shadow-lg border border-white/20 hover:bg-white dark:hover:bg-black transition-colors flex items-center justify-center gap-2 group/btn">
+                            Get Directions
+                            <span class="material-symbols-outlined text-base transition-transform group-hover/btn:translate-x-1">arrow_outward</span>
+</button>
 </div>
 </div>
 </div>
-<!-- Right Column: Contact Form -->
-<div class="flex flex-col gap-8">
-<h2 class="text-white tracking-light text-[28px] font-bold leading-tight text-left pb-2">Get in Touch</h2>
-<form class="flex flex-col gap-6 bg-surface-dark p-8 rounded-[2rem] border border-[#29382f]">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Right Column: Reservation Form (7 cols) -->
+<div class="lg:col-span-7">
+<div class="bg-white dark:bg-white/5 rounded-lg p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-xl backdrop-blur-sm">
+<div class="mb-8">
+<h3 class="text-2xl font-bold text-black dark:text-white">Make a Reservation</h3>
+<p class="text-gray-500 dark:text-gray-400 mt-2">Reserve your spot at the terrace. For large parties, please contact us directly.</p>
+</div>
+<form class="flex flex-col gap-6" onsubmit="event.preventDefault();">
+<!-- Row 1 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
-<label class="text-white text-sm font-medium pl-4" for="name">Name</label>
-<input class="h-14 w-full rounded-full bg-[#111714] border-transparent text-white placeholder:text-[#9eb7a8]/50 px-6 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="name" placeholder="John Doe" type="text"/>
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1" for="fullname">Full Name</label>
+<input class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 text-black dark:text-white placeholder:text-gray-400 rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="fullname" placeholder="Enter your name" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
-<label class="text-white text-sm font-medium pl-4" for="email">Email</label>
-<input class="h-14 w-full rounded-full bg-[#111714] border-transparent text-white placeholder:text-[#9eb7a8]/50 px-6 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="email" placeholder="john@example.com" type="email"/>
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1" for="email">Email Address</label>
+<input class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 text-black dark:text-white placeholder:text-gray-400 rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="email" placeholder="you@example.com" type="email"/>
 </div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1" for="phone">Phone Number</label>
+<input class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 text-black dark:text-white placeholder:text-gray-400 rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="phone" placeholder="+995 ..." type="tel"/>
 </div>
 <div class="flex flex-col gap-2">
-<label class="text-white text-sm font-medium pl-4" for="subject">Subject</label>
-<select class="h-14 w-full rounded-full bg-[#111714] border-transparent text-white px-6 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none appearance-none" id="subject">
-<option>General Inquiry</option>
-<option>Reservation Request</option>
-<option>Private Event</option>
-<option>Feedback</option>
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1" for="guests">Party Size</label>
+<div class="relative">
+<select class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 text-black dark:text-white rounded-full px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none cursor-pointer" id="guests">
+<option>2 People</option>
+<option>3 People</option>
+<option>4 People</option>
+<option>5 People</option>
+<option>6+ People</option>
 </select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">expand_more</span>
 </div>
+</div>
+</div>
+<!-- Row 3: Date/Time -->
 <div class="flex flex-col gap-2">
-<label class="text-white text-sm font-medium pl-4" for="message">Message</label>
-<textarea class="w-full rounded-[2rem] bg-[#111714] border-transparent text-white placeholder:text-[#9eb7a8]/50 p-6 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none resize-none" id="message" placeholder="How can we help you?" rows="4"></textarea>
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1" for="datetime">Date &amp; Time</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">calendar_month</span>
+<input class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 text-black dark:text-white rounded-full pl-12 pr-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all [color-scheme:light] dark:[color-scheme:dark]" id="datetime" type="datetime-local"/>
 </div>
-<button class="mt-2 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-primary hover:bg-[#2bc765] transition-colors text-[#111714] text-base font-bold leading-normal tracking-[0.015em]" type="button">
-                                    Send Message
-                                </button>
+</div>
+<!-- Message -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1" for="message">Special Requests</label>
+<textarea class="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 text-black dark:text-white placeholder:text-gray-400 rounded-lg px-5 py-3.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" id="message" placeholder="Any dietary restrictions or special occasions?" rows="4"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full bg-primary hover:bg-[#15c55a] text-background-dark font-bold text-lg rounded-full py-4 transition-all duration-300 shadow-[0_0_20px_rgba(25,230,107,0.25)] hover:shadow-[0_0_30px_rgba(25,230,107,0.4)] transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group" type="submit">
+                                Confirm Reservation
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
 </form>
 </div>
 </div>
 </div>
+<footer class="text-center pt-8 border-t border-gray-200 dark:border-white/5">
+<p class="text-sm text-gray-500 dark:text-gray-500">© 2023 Terrace Bar. All rights reserved.</p>
+</footer>
+</main>
+</body></html>
+
+<!-- Terrace Bar Gallery -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terrace Bar Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e66b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #112117; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a4034; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #19e66b; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111814] dark:text-white font-display antialiased selection:bg-primary selection:text-[#111814]">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Main Content Container -->
+<main class="layout-container flex h-full grow flex-col items-center justify-center py-10 sm:py-20">
+<!-- Header Section -->
+<div class="w-full max-w-[1200px] px-6 md:px-10 mb-12 flex flex-col items-center text-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="h-[1px] w-12 bg-primary/50"></span>
+<span class="text-primary text-sm font-bold tracking-widest uppercase">Atmosphere</span>
+<span class="h-[1px] w-12 bg-primary/50"></span>
 </div>
-<!-- Map Section -->
-<div class="w-full flex justify-center pb-20">
-<div class="max-w-[1280px] w-full px-6 lg:px-10">
-<div class="w-full h-[400px] md:h-[500px] relative rounded-[2.5rem] overflow-hidden border border-[#29382f] shadow-2xl">
-<!-- Dark overlay to simulate night map mode if image is bright -->
-<div class="absolute inset-0 bg-background-dark/20 pointer-events-none z-10"></div>
-<div class="w-full h-full bg-center bg-no-repeat bg-cover object-cover" data-alt="Map showing the location of Terrace Bar in Tbilisi, Georgia with dark street styling" data-location="Tbilisi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApoogReQTd7DZFPCY2GlWU1bg65WufgnSkulDWDwxYAkKThSfuFejF_9ixjSvn8O4xkmXXIp2KLN7zhPUvI3ZFcLuC5NKIoOxOJHdJODUJ81HabXMI2p7LTPzTYnLWoY1iy5gNp4ZhJpUJB9UEp29MnqAaSd5FtqkKpYq-A_fQswhnWboMjIy-2hKkjxWMuwBplmL6dMMnWpZ44eTsbdC4YI3FApu2StrKnhoqznlz0u-I0WYVyYu5veDCGKzQGDDDtBZhYH7ZPVI");'></div>
-<!-- Custom Map Marker Overlay -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
-<div class="bg-primary text-[#111714] p-3 rounded-full shadow-[0_0_20px_rgba(54,226,123,0.4)] animate-bounce">
-<span class="material-symbols-outlined text-3xl">location_on</span>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4 max-w-2xl">
+                    The Terrace Experience
+                </h2>
+<p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl font-normal leading-relaxed max-w-xl">
+                    Culinary excellence meets open-air relaxation. Explore the moments that define our evenings.
+                </p>
 </div>
-<div class="mt-2 bg-background-dark/90 backdrop-blur px-4 py-2 rounded-lg border border-[#29382f]">
-<span class="text-white font-bold text-sm">Terrace Bar</span>
+<!-- Masonry Grid Gallery -->
+<!-- Using CSS columns for a true masonry effect on desktop -->
+<div class="w-full max-w-[1400px] px-4 md:px-8">
+<div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+<!-- Item 1: Tall / Portrait -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer">
+<div class="w-full aspect-[3/4] bg-gray-800 relative">
+<img alt="Close up of a fancy cocktail with garnish on a dark table" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a fancy cocktail with garnish on a dark table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2rpUKjLoOEm5jFajh9YEmJX9biUQYen5V629GuXA2lS9pgwgccg1BvHDU8IZd02n-y-s8jmw1xo2KHynO_KMcEdIVS3VgtsmKtvG5DlXIbyUtHoLe26Db0hyyaV9b9mTX_bFzUwHHL-PWHM8NS8ykXO3moFiHpNj_alskYgolXMIowgd1kTDxcs1prIOjXvKpPmpyh4wLWNB_s73oMvz5lhbqJptRER4f0y6znnJFdN8nnoT0GYMlP7H52c0ZnlyXJrxGoW02C8k"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white font-bold text-lg">Signature Cocktails</h3>
+<p class="text-gray-300 text-sm">Handcrafted nightly</p>
+</div>
+</div>
+<!-- Item 2: Square -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer">
+<div class="w-full aspect-square bg-gray-800 relative">
+<img alt="Outdoor terrace seating at night with string lights" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Outdoor terrace seating at night with string lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArzl1W-UG3Y-X3dl6rD9ooSWDy21iBGa5iDT9Vb7xXkvBKYeVvpQyy0YsCKFT0mO9FeX_ZmMH25gCfOM7sZbRyC3bT0xe8RbSdyeFse3CBKKVM5w2VZ0lJUD_IIyjtV4ckNHLfO2HH16TyhKq7DxKKO_SJmC4qDecGvv1gtuq-t0Tlwp7GnHnDHbQg2-QSzbo0cPIeQFxwGOdVZHUIGzEMwl2otVc2VSGqabLWhAZQ4Cu14Sl8-8DnoavWfjTI8uOM8cZmfrMAI60"/>
+</div>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-4 right-4 bg-background-dark/80 backdrop-blur-md px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+<span class="material-symbols-outlined text-primary text-sm">open_in_full</span>
+</div>
+</div>
+<!-- Item 3: Landscape -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer">
+<div class="w-full aspect-[4/3] bg-gray-800 relative">
+<img alt="Top down view of a gourmet plated dish on a dark background" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Top down view of a gourmet plated dish on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADOUqBVc56InAzVR577cTbM5Kf7v00Mhu-Uo3FBdmBjEwjz-D99lz1DTiH0mrjQxvkJxuzyVwTlhEp3nU4ela7qS166Zr_xTarCqK4oHfd4UMlTfeQlFloODcyTLMiR8aDivXUneyJ5iOJMEgB-xn7g7SRIlYrOlTsfs6IR-cK0YnZO5XM9ZOQTpO0NxemRR1vnO7Pxok5yMt4NAdoRpqxmrMwbKNq2gXBIdyswtJVxDzgFNWPhwAQ5XKFrzFtHD24ENe8I6IWcGM"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white font-bold text-lg">Seasonal Entrees</h3>
+</div>
+</div>
+<!-- Item 4: Tall / Portrait -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer">
+<div class="w-full aspect-[9/16] bg-gray-800 relative">
+<img alt="Vertical shot of people enjoying drinks at the bar counter" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vertical shot of people enjoying drinks at the bar counter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtZ4UGPvFEPAtHbHvwQi-5spQDg7fKBrB5iIrE_ZO-39fX8J4RNVVSIbbJChXV6dCGopdd3zH9R1rYKVmLtGKLp_n_6PzyLkNR1cvewemgAxrl1N03_29h0qnE-SnHG3FAlJ3ZtsRDg-AzkclIEgoGJoNm0CU9Py0XmswQi9SdLJNLJh2TcTPc4H6lQLx-iHx4VXAjKNmubQsry4PAiYzwRfLFuNK_oaYL3lN7lTlv05ozwljX4Oi1wDz61lKjtWKZp1molQYNOmA"/>
+</div>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<!-- Item 5: Square -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer">
+<div class="w-full aspect-square bg-gray-800 relative">
+<img alt="Close up of a juicy burger with fries on a wooden board" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a juicy burger with fries on a wooden board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzsK80PAtz_dPykEUxDdw59-J7qMVex_omWSNq8Vb7WciFcCXwITUiXlfCCkzg-zkBosbGE0Vif56_hLLeMNPyQkWtnBPoOr7o59V4f2ytSZVAUXtlorhXUM3YylZcQAiVUvsMC8D-s88oa1zi_4cPAIgSCHON9gXZiFCen-S6aK9WzUfGb3DOnPgpO98iXIW-gIqPxZU6bH_BT3pghll9g--ZBL3-J3H77_1QIVmZMfJulf8kpA2v79tlX3RYwC_PIxu5DoGxHFc"/>
+</div>
+<div class="absolute top-4 left-4 bg-primary text-[#111814] text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Chef's Choice
+                        </div>
+</div>
+<!-- Item 6: Landscape -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer">
+<div class="w-full aspect-[16/9] bg-gray-800 relative">
+<img alt="Wide angle shot of the restaurant interior with warm lighting" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wide angle shot of the restaurant interior with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU59X3dcxexIbKqg55rJ2kEzxzLgpfAs4OUCgPyzKENB2_dn7YLqkFSg5kbMQYMW-be5gcbNw1O5m0dAc5c2ov6jMR7LWxpWz-JzlVD86tBXOVIuKwLnvakVY-HZwrW0oAo-hDGxL0IR-bMxg2mkGSoIGa4macHTg7pJV5xt_LL_z_MTN2j7u6mO66TE-_wKPzVf37079ywQsvK3yLclEq7zOz8iPakCPjPKG0tjKj2YkI1f7r9eFNxGP8P9VXLCd8CwtCbqDd6Kk"/>
+</div>
+</div>
+<!-- Item 7: Tall -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer">
+<div class="w-full aspect-[3/5] bg-gray-800 relative">
+<img alt="Gourmet dessert plating with berries and mint" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Gourmet dessert plating with berries and mint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC79i_A1PhtnwsdM2t9uCh6SO_uo4BuPuoyzZYKqSJMWSci3XMyyW3T-OYnWnHYfxw4_-aAaielVMhPOMKQIZJ4c8kZ-9q6RvfsI6YbPEldi9Q6B-AuRiuG6ix7Q34MJ-GgcJbULzZmWjpcMicf9mT0ILJbAuGCqK3kDEQIJN-36VDLn-WhwA475QmkLKzE_sallR6q5j70dPLN1XFbcn87euw5NDP-uHPCciXOdkFZy5fl3-FhmbXJZvpHSPELDWNnNeIACOeivU"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white font-bold text-lg">Sweet Endings</h3>
 </div>
 </div>
 </div>
 </div>
+<!-- Floating Action Button Area -->
+<div class="w-full max-w-[1200px] px-6 md:px-10 mt-16 flex justify-center">
+<button class="group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 text-[#111814] font-bold shadow-[0_0_20px_rgba(25,230,107,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(25,230,107,0.5)]">
+<span class="material-symbols-outlined text-[24px]">restaurant_menu</span>
+<span class="text-base tracking-wide uppercase">View Full Menu</span>
+<div class="absolute inset-0 -z-10 bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-20"></div>
+</button>
+</div>
+<!-- Bottom decorative element -->
+<div class="mt-20 flex justify-center opacity-30">
+<span class="material-symbols-outlined text-4xl text-gray-400">keyboard_arrow_down</span>
 </div>
 </main>
-<!-- Footer -->
-<footer class="border-t border-[#29382f] bg-[#0d1210] py-12">
-<div class="mx-auto flex max-w-[1280px] flex-col gap-8 px-6 lg:px-10 md:flex-row md:justify-between">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-2 text-white">
-<span class="material-symbols-outlined text-primary">local_bar</span>
-<h2 class="text-lg font-bold">Terrace Bar</h2>
-</div>
-<p class="text-[#9eb7a8] text-sm max-w-xs">An elegant dining experience in the heart of Tbilisi. Join us for unforgettable nights.</p>
-</div>
-<div class="flex flex-wrap gap-12 text-sm">
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Explore</h4>
-<a class="text-[#9eb7a8] hover:text-white" href="#">Home</a>
-<a class="text-[#9eb7a8] hover:text-white" href="#">Menu</a>
-<a class="text-[#9eb7a8] hover:text-white" href="#">Events</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Company</h4>
-<a class="text-[#9eb7a8] hover:text-white" href="#">About Us</a>
-<a class="text-[#9eb7a8] hover:text-white" href="#">Careers</a>
-<a class="text-[#9eb7a8] hover:text-white" href="#">Privacy Policy</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Contact</h4>
-<span class="text-[#9eb7a8]">+995 32 200 0000</span>
-<span class="text-[#9eb7a8]">info@terracebar.ge</span>
-</div>
-</div>
-</div>
-<div class="mx-auto mt-12 flex max-w-[1280px] justify-center px-6 text-xs text-[#586e62]">
-                © 2023 Terrace Bar. All rights reserved.
-            </div>
-</footer>
 </div>
 </body></html>
