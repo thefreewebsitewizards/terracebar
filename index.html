@@ -69,11 +69,22 @@
 <span class="truncate">Reserve a Table</span>
 </button>
 <!-- Mobile Menu Trigger -->
-<button class="md:hidden text-white hover:text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button id="mobileMenuToggle" class="md:hidden text-white hover:text-primary" aria-expanded="false" aria-controls="mobileMenu">
+  <span class="material-symbols-outlined" id="mobileMenuIcon">menu</span>
 </button>
 </div>
 </nav>
+
+<!-- Mobile Dropdown Menu -->
+<div id="mobileMenu" class="md:hidden fixed top-20 left-0 right-0 z-40 px-4 opacity-0 pointer-events-none -translate-y-2 transition-all duration-200">
+  <div class="glass-panel w-full max-w-[960px] mx-auto rounded-2xl px-6 py-4 flex flex-col gap-2">
+    <a href="#home" class="text-white/90 hover:text-primary text-base font-medium py-2">Home</a>
+    <a href="#menu" class="text-white/90 hover:text-primary text-base font-medium py-2">Menu</a>
+    <a href="#about" class="text-white/90 hover:text-primary text-base font-medium py-2">About</a>
+    <a href="#contact" class="text-white/90 hover:text-primary text-base font-medium py-2">Find Us</a>
+    <button id="mobileReserveBtn" class="mt-1 neon-shadow rounded-full bg-primary px-5 py-2 text-background-dark text-sm font-bold">Reserve a Table</button>
+  </div>
+</div>
 </div>
 <!-- Hero Section -->
 <a id="home"></a>
@@ -732,6 +743,36 @@
     }, { threshold: 0.2 });
     io.observe(hero);
   }
+  // Mobile menu toggle logic
+  const mobileToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileIcon = document.getElementById('mobileMenuIcon');
+  const reserveMobile = document.getElementById('mobileReserveBtn');
+  const toggleMobileMenu = (open) => {
+    const show = open ?? !(mobileMenu.classList.contains('opacity-0'));
+    mobileMenu.classList.toggle('opacity-0', !show);
+    mobileMenu.classList.toggle('pointer-events-none', !show);
+    mobileMenu.classList.toggle('-translate-y-2', !show);
+    mobileToggle?.setAttribute('aria-expanded', show ? 'true' : 'false');
+    if (mobileIcon) mobileIcon.textContent = show ? 'close' : 'menu';
+  };
+  mobileToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const hidden = mobileMenu.classList.contains('opacity-0');
+    toggleMobileMenu(hidden);
+  });
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    const t = e.target;
+    if (!mobileMenu || mobileMenu.classList.contains('opacity-0')) return;
+    if (mobileMenu.contains(t) || mobileToggle?.contains(t)) return;
+    toggleMobileMenu(false);
+  });
+  // Close on link click and wire Reserve
+  mobileMenu?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => toggleMobileMenu(false));
+  });
+  reserveMobile?.addEventListener('click', () => { toggleMobileMenu(false); scrollToContact(); });
 </script>
 </body></html>
 
